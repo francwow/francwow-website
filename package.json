@@ -23,6 +23,7 @@
   "homepage": "https://github.com/francwow/FOS-website#readme",
   "dependencies": {
     "@tanstack/react-query": "^4.24.4",
+    "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.1"

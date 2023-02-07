@@ -1,0 +1,153 @@
+/* General Styles */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: "Inter", "sans-serif";
+  --bg-color-one: rgb(45, 205, 223);
+  --br-color-two: rgb(163, 26, 203);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Mobile-first styles */
+
+.main-wrapper {
+  position: relative;
+}
+
+/* <Header /> */
+.header {
+  position: fixed;
+  top: 0;
+  left: auto;
+  right: 0;
+  bottom: auto;
+  width: 100%;
+  z-index: 99;
+}
+
+.main-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-color-one);
+  color: white;
+  height: 69px;
+}
+
+.logo {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo h1 {
+  font-weight: 400;
+  margin: 0;
+}
+
+.burger {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.burger-btn {
+  background-color: transparent;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+
+.line_1,
+.line_2,
+.line_3 {
+  width: 30px;
+  height: 1px;
+  background-color: white;
+  transition: all 0.1s ease-in-out;
+}
+
+.toggle .line_1 {
+  transform: rotate(-45deg) translate(-6px, 5px);
+}
+
+.toggle .line_2 {
+  opacity: 0;
+}
+
+.toggle .line_3 {
+  transform: rotate(45deg) translate(-6px, -5px);
+}
+
+.burger-btn:hover .line_1,
+.burger-btn:hover .line_2,
+.burger-btn:hover .line_3 {
+  width: 35px;
+}
+
+.nav-menu-wrapper {
+  position: fixed;
+  width: 220px;
+  top: 100%;
+  left: auto;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--bg-color-one),
+    var(--br-color-two)
+  );
+  transition: all 0.4s ease 0.5s;
+  z-index: 99;
+}
+
+.show {
+  transition: all 0.2s ease;
+  top: 69px;
+  opacity: 1;
+}
+
+.hide {
+  transform: translate(-120px);
+}
+
+/* <MainSection /> */
+.main-section {
+  background-color: deeppink;
+  color: white;
+  margin-top: 69px;
+  min-height: 100vh;
+  transition: all 0.2s ease 0.3s;
+}
+
+.main-section h1 {
+  margin: 0;
+}
