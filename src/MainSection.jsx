@@ -1,14 +1,20 @@
-const MainSection = (props) => {
-  const mainSection = document.querySelector(".main-section");
+import { useRef, useEffect } from "react";
 
-  if (props.menuActive) {
-    mainSection.classList.add("hide");
-  } else {
-    mainSection.classList.remove("hide");
-  }
+const MainSection = (props) => {
+  const mainSectionRef = useRef(null);
+
+  useEffect(() => {
+    if (mainSectionRef.current) {
+      if (props.menuActive) {
+        mainSectionRef.current.classList.add("hide");
+      } else {
+        mainSectionRef.current.classList.remove("hide");
+      }
+    }
+  }, [props.menuActive]);
 
   return (
-    <div className="main-section">
+    <div ref={mainSectionRef} className="main-section">
       <h1>Hello! This is my MainSection</h1>
     </div>
   );
