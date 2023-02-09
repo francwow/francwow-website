@@ -17,6 +17,7 @@ body {
   --font-code: monospace, "Courier New", Courier, sans-serif;
   --bg-color-one: rgb(45, 205, 223);
   --bg-color-two: rgb(163, 26, 203);
+  --bg-color-three: deeppink;
   --bg-color-one-darker: rgb(40, 195, 212);
 }
 
@@ -178,17 +179,23 @@ a {
   opacity: 1;
 }
 
+.nav-menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  height: 90%;
+}
+
 .nav-menu {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  width: 90%;
-  height: 70%;
 }
 
 .link {
-  position: relative;
   text-decoration: none;
   padding: 20px;
   letter-spacing: 1px;
@@ -197,32 +204,150 @@ a {
   font-family: var(--font-body);
   font-weight: 100;
   font-size: 1.3rem;
+  transition: all 0.2s ease-in-out;
 }
 
-.fade-in-1 {
+.link:hover {
+  transform: translateX(-15px) scale(1.2);
+  transition: all 0.2s ease-in-out;
+}
+
+.fade-in {
   animation: navLinkFade 1s ease forwards;
 }
 
-.fade-in-2 {
-  animation: navLinkFade 1s ease forwards;
-}
-
-.fade-in-3 {
-  animation: navLinkFade 1s ease forwards;
-}
-
-.fade-out-1 {
+.fade-out {
   animation: navLinkFadeOut 1s ease backwards;
 }
 
-.fade-out-2 {
-  animation: navLinkFadeOut 1s ease backwards;
+/* <MainSection /> */
+.main-section {
+  background-color: var(--bg-color-three);
+  color: white;
+  margin-top: 69px;
+  min-height: 100vh;
+  transition: transform 0.2s ease 0.3s;
 }
 
-.fade-out-3 {
-  animation: navLinkFadeOut 1s ease backwards;
+.hide {
+  transform: translateX(-120px);
+  transition: transform 0.2s ease 0.3s;
 }
 
+.main-section h1 {
+  margin: 0;
+  font-family: var(--font-body);
+}
+
+.fos-presentation {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.description-container {
+  padding: 20px;
+}
+
+.description {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.description:first-child {
+  padding-left: 10px;
+}
+
+.description p {
+  margin: 5px 0;
+  padding: 0;
+  font-size: 3.5rem;
+}
+
+.desc-text-one {
+  font-family: var(--font-body);
+  opacity: 0;
+  font-style: italic;
+  animation: descOneFadeIn 2s ease forwards;
+  animation-delay: 0;
+}
+
+.desc-text-two {
+  font-family: var(--font-body);
+  opacity: 0;
+  animation: descTwoFadeIn 2s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.desc-text-three {
+  font-family: var(--font-code);
+  opacity: 0;
+  animation: descThreeFadeIn 2s ease forwards;
+  animation-delay: 1s;
+}
+
+.text-stick {
+  content: "";
+  position: absolute;
+  visibility: hidden;
+  right: 0;
+  bottom: 0;
+  height: 70px;
+  width: 2px;
+  background-color: white;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.about-link-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Other styles */
+.btn {
+  text-decoration: none;
+  padding: 15px;
+  letter-spacing: 1px;
+  margin: 15px;
+  color: white;
+  font-family: var(--font-body);
+  font-weight: 100;
+  font-size: 1.3rem;
+  background-color: transparent;
+  border: white 1px solid;
+  border-radius: 0;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: var(--bg-color-three);
+  background-color: white;
+}
+
+.icons-container {
+  display: flex;
+}
+
+.icon svg {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  fill: rgb(232, 232, 232);
+}
+
+.icon:hover svg {
+  fill: white;
+}
+
+/* Keyframe animations */
 @keyframes navLinkFade {
   from {
     opacity: 0;
@@ -245,27 +370,37 @@ a {
   }
 }
 
-/* <MainSection /> */
-.main-section {
-  background-color: deeppink;
-  color: white;
-  margin-top: 69px;
-  min-height: 100vh;
-  transition: transform 0.2s ease 0.3s;
+@keyframes descOneFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(400px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1.3);
+  }
 }
 
-.hide {
-  transform: translateX(-120px);
-  transition: transform 0.2s ease 0.3s;
+@keyframes descTwoFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(400px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
-.main-section div {
-  height: 500px;
-}
-
-.main-section h1 {
-  margin: 0;
-  font-family: var(--font-body);
+@keyframes descThreeFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-400px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
 }
 
 /* Media Queries */

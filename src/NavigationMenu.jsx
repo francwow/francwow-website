@@ -1,3 +1,5 @@
+import Icons from "./Icons";
+
 const NavigationMenu = (props) => {
   return (
     <div
@@ -5,26 +7,27 @@ const NavigationMenu = (props) => {
         props.menuActive ? "nav-menu-wrapper show" : "nav-menu-wrapper"
       }
     >
-      <nav className="nav-menu">
-        <a
-          className={props.menuActive ? "link fade-in-1" : "link fade-out-1"}
-          href="#about"
-        >
-          About
-        </a>
-        <a
-          className={props.menuActive ? "link fade-in-2" : "link fade-out-2"}
-          href="#work"
-        >
-          Work
-        </a>
-        <a
-          className={props.menuActive ? "link fade-in-3" : "link fade-out-3"}
-          href="#contact"
-        >
-          Contact
-        </a>
-      </nav>
+      <div
+        className={
+          props.menuActive
+            ? "nav-menu-container fade-in"
+            : "nav-menu-container fade-out"
+        }
+      >
+        <nav className="nav-menu">
+          <a className="link" href="#about">
+            About
+          </a>
+
+          <a className="link" href="#work">
+            Work
+          </a>
+          <a className="link" href="#contact">
+            Contact
+          </a>
+        </nav>
+        <Icons />
+      </div>
     </div>
   );
 };
