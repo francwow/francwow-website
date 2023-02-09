@@ -1,34 +1,32 @@
+import { useContext } from "react";
+import MenuActiveContext from "./contexts/menuActiveContext";
+import NavigationMenu from "./NavigationMenu";
+
 const Header = (props) => {
-  const burgerHandle = () => {
-    const navMenu = document.querySelector(".nav-menu-wrapper");
-    const burgerBtn = document.querySelector(".burger-btn");
-
-    if (!props.menuActive) {
-      navMenu.classList.add("show");
-      props.setMenuActive(true);
-    } else {
-      navMenu.classList.remove("show");
-      props.setMenuActive(false);
-    }
-
-    burgerBtn.classList.toggle("toggle");
-    console.log(props.menuActive);
-  };
+  const menuActive = useContext(MenuActiveContext);
 
   return (
     <div className="header">
       <div className="main-nav">
-        <div className="logo">
-          <h1>fos</h1>
-        </div>
+        <a href="#">
+          <div className="logo">
+            <span>{`FOS={webDeveloper}`}</span>
+          </div>
+        </a>
+
         <div className="burger">
-          <button onClick={burgerHandle} className="burger-btn">
+          <button
+            onClick={() => {
+              props.setMenuActive(!menuActive);
+            }}
+            className={menuActive ? "burger-btn toggle" : "burger-btn"}
+          >
             <div className="line_1"></div>
             <div className="line_2"></div>
             <div className="line_3"></div>
           </button>
         </div>
-        <div className="nav-menu-wrapper"></div>
+        <NavigationMenu menuActive={menuActive} />
       </div>
     </div>
   );
