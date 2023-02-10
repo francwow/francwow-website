@@ -1,53 +1,76 @@
-import { useContext, useRef, useEffect } from "react";
+import { useContext, useRef, useEffect, useState } from "react";
 import MenuActiveContext from "./contexts/menuActiveContext";
+import Description from "./Description";
+import Footer from "./Footer";
 
 const MainSection = () => {
+  let [rotateDiv, setRotateDiv] = useState(0);
+  const [visible, setVisible] = useState(false);
   const menuActive = useContext(MenuActiveContext);
-  let stickLoopInterval = null;
-  const stickRef = useRef(null);
 
   useEffect(() => {
-    loop();
-    return () => {
-      clearInterval(stickLoopInterval);
-    };
+    rotate();
   }, []);
 
-  const loop = () => {
-    stickLoopInterval = setInterval(() => {
-      stickRef.current.classList.toggle("visible");
-    }, 500);
+  const rotate = () => {
+    let noScroll = 0;
+    window.addEventListener("scroll", () => {
+      let scrollDown = window.pageYOffset / 2;
+      if (scrollDown > noScroll) {
+        setRotateDiv(scrollDown);
+      } else {
+        setRotateDiv(scrollDown);
+      }
+    });
+  };
+
+  const arrowHandle = () => {
+    setVisible(true);
+    console.log(visible);
+  };
+
+  const style = {
+    transform: `rotate(${rotateDiv}deg)`,
+    transition: "transform 150ms ease",
   };
 
   return (
-    <div className={menuActive ? "main-section hide" : "main-section"}>
+    <div className={menuActive ? "main-section move-left" : "main-section"}>
+      {/* <div style={style} className="moon-container">
+        <div className="moon-one"></div>
+        <div className="moon-two"></div>
+      </div> */}
+
       <div className="home-wrapper">
         <div className="fos-presentation">
           {/* <div className="img-container">
             <img src="src/assets/profilepic.jpg" alt="Francisco smiling" />
           </div> */}
-          <div className="description-container">
-            <div className="description">
-              <p className="desc-text-one">Hi!</p>
+          <Description visible={visible} />
+          <div
+            className={
+              visible ? "portfolio-container visible" : "portfolio-container"
+            }
+          >
+            <div className="portfolio">
+              <h2>Have a look at my work!</h2>
             </div>
-            <div className="description">
-              <strong>
-                <p className="desc-text-two">My name is Francisco,</p>
-              </strong>
-            </div>
-            <div className="description">
-              <p className="desc-text-three">
-                I love building websites.{" "}
-                <span ref={stickRef} className="text-stick"></span>
-              </p>
-            </div>
-            <div className="about-link-container">
-              <button className="btn">Contact me</button>
-            </div>
-            {/* IDEA: Objeto circular semejante al sol o la luna, que al hacer scroll var rotando */}
+          </div>
+          <div
+            tabIndex="0"
+            role="button"
+            aria-pressed="false"
+            className="arrow-container"
+            onKeyDown={(e) => e.preventDefault}
+            onClick={arrowHandle}
+          >
+            <span className="material-symbols-outlined arrow">
+              expand_circle_down
+            </span>
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

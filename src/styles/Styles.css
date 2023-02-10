@@ -209,7 +209,6 @@ a {
 
 .link:hover {
   transform: translateX(-15px) scale(1.2);
-  transition: all 0.2s ease-in-out;
 }
 
 .fade-in {
@@ -223,13 +222,18 @@ a {
 /* <MainSection /> */
 .main-section {
   background-color: var(--bg-color-three);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
   color: white;
   margin-top: 69px;
   min-height: 100vh;
   transition: transform 0.2s ease 0.3s;
 }
 
-.hide {
+.move-left {
   transform: translateX(-120px);
   transition: transform 0.2s ease 0.3s;
 }
@@ -240,15 +244,18 @@ a {
 }
 
 .fos-presentation {
+  position: relative;
   width: 100%;
   min-height: 80vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .description-container {
   padding: 20px;
+  transition: all 0.5s ease-in-out;
 }
 
 .description {
@@ -300,17 +307,104 @@ a {
   background-color: white;
 }
 
+.about-link-container {
+  display: flex;
+  margin: 5px 0;
+  opacity: 0;
+  justify-content: center;
+  align-items: center;
+  animation: aboutLinkFadeIn 4s ease forwards;
+  animation-delay: 2s;
+}
+
+.portfolio-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  visibility: hidden;
+}
+
+.portfolio {
+  background-color: white;
+  color: deeppink;
+  height: 30px;
+  transition: all 0.5s ease;
+}
+
+.portfolio:hover {
+  height: 100%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.footer {
+  font-family: var(--font-code);
+  color: white;
+}
+
+/* Other styles */
 .visible {
   visibility: visible;
 }
 
-.about-link-container {
+.hide {
+  opacity: 0;
+}
+
+.asteroid-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.asteroid-container {
+  position: absolute;
+  animation: asteroidImpact 5s ease infinite;
+}
+
+.asteroid {
+  display: block;
+  height: 70px;
+  width: 2px;
+  background-color: white;
+  transform: rotate(65deg);
+}
+
+.moon-container {
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
+  left: 30px;
+  bottom: 30px;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Other styles */
+.moon-one {
+  position: absolute;
+  border-radius: 15px;
+  width: 100px;
+  height: 100px;
+  background-color: white;
+}
+
+.moon-two {
+  position: absolute;
+  border-radius: 15px;
+  width: 100px;
+  height: 100px;
+  transform: rotate(45deg);
+  background-color: white;
+}
+
 .btn {
   text-decoration: none;
   padding: 15px;
@@ -325,6 +419,7 @@ a {
   border-radius: 0;
   font-weight: 400;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .btn:hover {
@@ -345,6 +440,17 @@ a {
 
 .icon:hover svg {
   fill: white;
+}
+
+.arrow-container {
+  margin-top: 40px;
+  cursor: pointer;
+}
+
+.arrow {
+  transform: scale(3);
+  color: white;
+  animation: arrowGlow 2s ease-in-out infinite;
 }
 
 /* Keyframe animations */
@@ -373,7 +479,7 @@ a {
 @keyframes descOneFadeIn {
   from {
     opacity: 0;
-    transform: translateX(400px);
+    transform: translateX(40px);
   }
   to {
     opacity: 1;
@@ -384,7 +490,7 @@ a {
 @keyframes descTwoFadeIn {
   from {
     opacity: 0;
-    transform: translateY(400px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
@@ -395,11 +501,42 @@ a {
 @keyframes descThreeFadeIn {
   from {
     opacity: 0;
-    transform: translateX(-400px);
+    transform: translateX(-40px);
   }
   to {
     opacity: 1;
     transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes aboutLinkFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes asteroidImpact {
+  from {
+    opacity: 0;
+    transform: translateX(0) translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-1700px) translateY(700px);
+  }
+}
+
+@keyframes arrowGlow {
+  from {
+    opacity: 0;
+    transform: scale(3) translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(3.2) translateY(5px);
   }
 }
 
