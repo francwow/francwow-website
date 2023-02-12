@@ -1,12 +1,14 @@
 import { useRef, useEffect, useState } from "react";
 
 const Description = (props) => {
+  // requestAnimationFrame
   // const [stickVisible, setStickVisible] = useState(false);
   let stickLoopInterval = null;
   const stickRef = useRef(null);
 
   useEffect(() => {
     loop();
+    // requestAnimationFrame
     // loopAnimation();
     return () => {
       clearInterval(stickLoopInterval);
@@ -19,6 +21,7 @@ const Description = (props) => {
     }, 500);
   };
 
+  // requestAnimationFrame
   // let requestAnimationFrame = window.requestAnimationFrame;
 
   // let last = 0;
