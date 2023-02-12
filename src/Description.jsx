@@ -1,11 +1,13 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 
 const Description = (props) => {
+  // const [stickVisible, setStickVisible] = useState(false);
   let stickLoopInterval = null;
   const stickRef = useRef(null);
 
   useEffect(() => {
     loop();
+    // loopAnimation();
     return () => {
       clearInterval(stickLoopInterval);
     };
@@ -16,6 +18,22 @@ const Description = (props) => {
       stickRef.current.classList.toggle("visible");
     }, 500);
   };
+
+  // let requestAnimationFrame = window.requestAnimationFrame;
+
+  // let last = 0;
+  // let speed = 0.5;
+
+  // function loopAnimation(timeStamp) {
+  //   let timeInSecond = timeStamp / 1000;
+
+  //   if (timeInSecond - last >= speed) {
+  //     last = timeInSecond;
+  //     setStickVisible((prevState) => !prevState);
+  //   }
+
+  //   requestAnimationFrame(main);
+  // }
 
   return (
     <div
