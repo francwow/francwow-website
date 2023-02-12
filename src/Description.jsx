@@ -35,7 +35,7 @@ const Description = (props) => {
   //     setStickVisible((prevState) => !prevState);
   //   }
 
-  //   requestAnimationFrame(main);
+  //   requestAnimationFrame(loopAnimation);
   // }
 
   return (
