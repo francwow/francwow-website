@@ -2,41 +2,41 @@ import { useRef, useEffect, useState } from "react";
 
 const Description = (props) => {
   // requestAnimationFrame
-  // const [stickVisible, setStickVisible] = useState(false);
+  const [stickVisible, setStickVisible] = useState(false);
   let stickLoopInterval = null;
   const stickRef = useRef(null);
 
   useEffect(() => {
-    loop();
+    // loop();
     // requestAnimationFrame
-    // loopAnimation();
+    loopAnimation();
     return () => {
       clearInterval(stickLoopInterval);
     };
   }, []);
 
-  const loop = () => {
-    stickLoopInterval = setInterval(() => {
-      stickRef.current.classList.toggle("visible");
-    }, 500);
-  };
+  // const loop = () => {
+  //   stickLoopInterval = setInterval(() => {
+  //     stickRef.current.classList.toggle("visible");
+  //   }, 500);
+  // };
 
   // requestAnimationFrame
-  // let requestAnimationFrame = window.requestAnimationFrame;
+  let requestAnimationFrame = window.requestAnimationFrame;
 
-  // let last = 0;
-  // let speed = 0.5;
+  let last = 0;
+  let speed = 0.5;
 
-  // function loopAnimation(timeStamp) {
-  //   let timeInSecond = timeStamp / 1000;
+  function loopAnimation(timeStamp) {
+    let timeInSecond = timeStamp / 1000;
 
-  //   if (timeInSecond - last >= speed) {
-  //     last = timeInSecond;
-  //     setStickVisible((prevState) => !prevState);
-  //   }
+    if (timeInSecond - last >= speed) {
+      last = timeInSecond;
+      setStickVisible((prevState) => !prevState);
+    }
 
-  //   requestAnimationFrame(loopAnimation);
-  // }
+    requestAnimationFrame(loopAnimation);
+  }
 
   return (
     <div
@@ -55,7 +55,10 @@ const Description = (props) => {
       <div className="description">
         <p className="desc-text-three">
           I love building websites.{" "}
-          <span ref={stickRef} className="text-stick"></span>
+          <span
+            ref={stickRef}
+            className={stickVisible ? "text-stick visible" : "text-stick"}
+          ></span>
         </p>
       </div>
       {/* <div className="about-link-container">

@@ -4,48 +4,24 @@ import Description from "./Description";
 import Footer from "./Footer";
 
 const MainSection = () => {
-  let [rotateDiv, setRotateDiv] = useState(0);
+  const [showPortfolio, setShowPortfolio] = useState(false);
   const [visible, setVisible] = useState(false);
   const menuActive = useContext(MenuActiveContext);
 
-  useEffect(() => {
-    rotate();
-  }, []);
-
-  const rotate = () => {
-    let noScroll = 0;
-    window.addEventListener("scroll", () => {
-      let scrollDown = window.pageYOffset / 2;
-      if (scrollDown > noScroll) {
-        setRotateDiv(scrollDown);
-      } else {
-        setRotateDiv(scrollDown);
-      }
-    });
-  };
-
   const arrowHandle = () => {
-    setVisible(true);
+    setVisible((visible) => !visible);
+    setShowPortfolio((showPortfolio) => !showPortfolio);
     console.log(visible);
   };
 
-  const style = {
-    transform: `rotate(${rotateDiv}deg)`,
-    transition: "transform 150ms ease",
-  };
-
   return (
-    <div className={menuActive ? "main-section move-left" : "main-section"}>
-      {/* <div style={style} className="moon-container">
-        <div className="moon-one"></div>
-        <div className="moon-two"></div>
-      </div> */}
-
+    <div
+      className={`main-section ${menuActive ? "move-left" : ""} ${
+        showPortfolio ? "invert-color" : ""
+      }`}
+    >
       <div className="home-wrapper">
         <div className="fos-presentation">
-          {/* <div className="img-container">
-            <img src="src/assets/profilepic.jpg" alt="Francisco smiling" />
-          </div> */}
           <Description visible={visible} />
           <div
             className={
@@ -60,11 +36,19 @@ const MainSection = () => {
             tabIndex="0"
             role="button"
             aria-pressed="false"
+            style={
+              showPortfolio
+                ? { transform: "rotate(90deg)" }
+                : { transform: "rotate(-90deg)" }
+            }
             className="arrow-container"
             onKeyDown={(e) => e.preventDefault}
             onClick={arrowHandle}
           >
-            <span className="material-symbols-outlined arrow">
+            <span
+              style={showPortfolio ? { color: "deeppink" } : { color: "white" }}
+              className="material-symbols-outlined arrow"
+            >
               expand_circle_down
             </span>
           </div>
