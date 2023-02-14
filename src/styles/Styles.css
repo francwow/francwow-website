@@ -40,9 +40,12 @@ h2 {
 }
 
 /* Mobile-first styles */
-
 .main-wrapper {
   position: relative;
+}
+
+.home-wrapper {
+  width: 100%;
 }
 
 /* <Overlay /> */
@@ -230,7 +233,6 @@ h2 {
 
 /* <MainSection /> */
 .main-section {
-  background-color: var(--bg-color-three);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -238,8 +240,18 @@ h2 {
   position: relative;
   color: white;
   margin-top: 69px;
+  width: 100%;
   min-height: calc(100vh - 69px);
   transition: transform 0.2s ease 0.3s;
+}
+
+.main-background {
+  background-image: url(../assets/beach.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-color: var(--bg-color-three);
 }
 
 .invert-color {
@@ -260,9 +272,8 @@ h2 {
 .fos-presentation {
   position: relative;
   overflow-y: hidden;
-  margin-top: 30px;
   width: 100%;
-  min-height: 80vh;
+  height: calc(100vh - 69px);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -330,6 +341,7 @@ h2 {
   align-items: center;
 }
 
+/* <Portfolio /> */
 .portfolio-container {
   position: absolute;
   top: 0;
@@ -338,13 +350,91 @@ h2 {
   bottom: 0;
   visibility: hidden;
   opacity: 0;
-  transform: translate3d(0, 30%, 0);
+  transform: translate3d(0, 60%, 0);
 }
 
 .portfolio {
   background-color: inherit;
   color: inherit;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.info-link-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 33.33%;
+  border: 1px solid white;
+  overflow: hidden;
+  background-color: var(--bg-color-three);
+}
+
+.info-link-container h2 {
+  font-family: var(--font-body);
+}
+
+.info-img {
+  background-image: url(../assets/building_2.jpg);
+  background-position: bottom;
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-color: var(--bg-color-three);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.info-img:hover {
+  transform: scale(1.2);
+}
+
+/* <Contact /> */
+.contact-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  text-align: center;
+  background-color: var(--bg-color-two);
+  width: 100%;
+  min-height: calc(100vh - 69px);
+  padding: 20px;
+}
+
+.contact-background {
+  background-image: url(../assets/building.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-color: var(--bg-color-three);
+}
+
+.contact-wrapper h1 {
+  font-size: 2.5rem;
+  margin: 20px;
+}
+
+.contact-wrapper p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 20px;
+}
+
+/* <Footer /> */
+.footer-wrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -369,7 +459,8 @@ h2 {
   visibility: visible;
   opacity: 1;
   transform: translate3d(0, 0, 0);
-  transition: transform 1s ease 0.4s, opacity 4s ease 0.4s;
+  transition: transform 2s cubic-bezier(1, 0.35, 0.25, 1.1),
+    opacity 1s ease-out 0.2s;
 }
 
 .hide {
@@ -433,7 +524,7 @@ h2 {
   background-color: transparent;
   border: white 1px solid;
   border-radius: 0;
-  font-weight: 400;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -441,6 +532,10 @@ h2 {
 .btn:hover {
   color: var(--bg-color-two);
   background-color: white;
+}
+
+.info-link-container .btn:hover {
+  color: var(--bg-color-three);
 }
 
 .icons-container {
@@ -459,7 +554,9 @@ h2 {
 }
 
 .arrow-container {
-  margin-top: 40px;
+  position: fixed;
+  bottom: 30px;
+  right: 25px;
   cursor: pointer;
   z-index: 999;
   opacity: 0;
@@ -470,40 +567,6 @@ h2 {
 .arrow {
   transform: scale(2.5);
   color: white;
-}
-
-/* <Contact /> */
-.contact-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  color: white;
-  text-align: center;
-  background-color: var(--bg-color-two);
-  width: 100%;
-  min-height: calc(100vh - 69px);
-  padding: 20px;
-}
-
-.contact-wrapper h1 {
-  font-size: 2.5rem;
-  margin: 20px;
-}
-
-.contact-wrapper p {
-  font-family: var(--font-body);
-  font-weight: 400;
-  line-height: 20px;
-}
-
-.footer-wrapper {
-  background-color: var(--bg-color-two);
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 /* Keyframe animations */

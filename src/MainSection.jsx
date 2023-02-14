@@ -2,6 +2,7 @@ import { useContext, useRef, useEffect, useState } from "react";
 import MenuActiveContext from "./contexts/menuActiveContext";
 import Description from "./Description";
 import Footer from "./Footer";
+import Portfolio from "./Portfolio";
 
 const MainSection = () => {
   const [showPortfolio, setShowPortfolio] = useState(false);
@@ -16,24 +17,14 @@ const MainSection = () => {
 
   return (
     <div
-      className={`main-section ${menuActive ? "move-left" : ""} ${
-        showPortfolio ? "invert-color" : ""
-      }`}
+      className={`main-section main-background ${
+        menuActive ? "move-left" : ""
+      } ${showPortfolio ? "" : ""}`}
     >
       <div className="home-wrapper">
         <div className="fos-presentation">
           <Description visible={visible} />
-          <div
-            className={
-              visible ? "portfolio-container visible" : "portfolio-container"
-            }
-          >
-            <div className="portfolio">
-              <h2>Learn more about me!</h2>
-              <h2>Have a look at my work!</h2>
-              <h2>Contact me!</h2>
-            </div>
-          </div>
+          <Portfolio visible={visible} />
           <div
             tabIndex="0"
             role="button"

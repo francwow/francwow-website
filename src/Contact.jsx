@@ -11,7 +11,7 @@ const Contact = () => {
     <div
       className={`main-section ${menuActive ? "move-left" : ""} invert-color`}
     >
-      <div className="contact-wrapper">
+      <div className="contact-wrapper contact-background">
         <div className="contact-container">
           <h1>I would love to work with you!</h1>
           <p>
