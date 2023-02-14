@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import MenuActiveContext from "./contexts/menuActiveContext";
 import NavigationMenu from "./NavigationMenu";
 
@@ -8,11 +9,11 @@ const Header = (props) => {
   return (
     <div className="header">
       <div className="main-nav">
-        <a href="#">
+        <Link to="/" onClick={() => props.setMenuActive(false)}>
           <div className="logo">
             <span>{`FOS={webDeveloper}`}</span>
           </div>
-        </a>
+        </Link>
 
         <div className="burger">
           <button
@@ -26,7 +27,7 @@ const Header = (props) => {
             <div className="line_3"></div>
           </button>
         </div>
-        <NavigationMenu menuActive={menuActive} />
+        <NavigationMenu setMenuActive={props} menuActive={menuActive} />
       </div>
     </div>
   );

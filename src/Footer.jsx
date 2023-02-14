@@ -1,7 +1,14 @@
-const Footer = () => {
+const Footer = (props) => {
   return (
     <div className="footer-container">
-      <span className="footer">Copyright © 2023 fos.com</span>
+      <span
+        style={
+          props.color ? { color: "var(--bg-color-two)" } : { color: "white" }
+        }
+        className="footer"
+      >
+        Copyright © 2023 fos.com
+      </span>
     </div>
   );
 };

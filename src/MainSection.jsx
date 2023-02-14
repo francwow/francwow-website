@@ -29,7 +29,9 @@ const MainSection = () => {
             }
           >
             <div className="portfolio">
+              <h2>Learn more about me!</h2>
               <h2>Have a look at my work!</h2>
+              <h2>Contact me!</h2>
             </div>
           </div>
           <div
@@ -38,15 +40,15 @@ const MainSection = () => {
             aria-pressed="false"
             style={
               showPortfolio
-                ? { transform: "rotate(90deg)" }
-                : { transform: "rotate(-90deg)" }
+                ? { transform: "rotate(180deg)" }
+                : { transform: "rotate(0deg)" }
             }
             className="arrow-container"
             onKeyDown={(e) => e.preventDefault}
             onClick={arrowHandle}
           >
             <span
-              style={showPortfolio ? { color: "deeppink" } : { color: "white" }}
+              style={showPortfolio ? { color: "inherit" } : { color: "white" }}
               className="material-symbols-outlined arrow"
             >
               expand_circle_down
@@ -54,7 +56,6 @@ const MainSection = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import Icons from "./Icons";
+import { Link } from "react-router-dom";
 
 const NavigationMenu = (props) => {
   return (
@@ -15,16 +16,28 @@ const NavigationMenu = (props) => {
         }
       >
         <nav className="nav-menu">
-          <a className="link" href="#about">
+          <Link
+            className="link"
+            to="/about"
+            onClick={() => props.setMenuActive(false)}
+          >
             About
-          </a>
+          </Link>
 
-          <a className="link" href="#work">
+          <Link
+            className="link"
+            to="/work"
+            onClick={() => props.setMenuActive(false)}
+          >
             Work
-          </a>
-          <a className="link" href="#contact">
+          </Link>
+          <Link
+            className="link"
+            to="/contact"
+            onClick={() => props.setMenuActive(false)}
+          >
             Contact
-          </a>
+          </Link>
         </nav>
         <Icons />
       </div>
