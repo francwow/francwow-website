@@ -246,7 +246,7 @@ h2 {
 }
 
 .main-background {
-  background-image: url(../assets/beach.jpg);
+  background-image: url(../assets/beach.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -381,7 +381,7 @@ h2 {
 }
 
 .info-img {
-  background-image: url(../assets/building_2.jpg);
+  background-image: url(../assets/building_2.webp);
   background-position: bottom;
   background-size: cover;
   background-blend-mode: multiply;
@@ -413,7 +413,7 @@ h2 {
 }
 
 .contact-background {
-  background-image: url(../assets/building.jpg);
+  background-image: url(../assets/building.webp);
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
