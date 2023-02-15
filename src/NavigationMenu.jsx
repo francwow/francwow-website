@@ -23,7 +23,6 @@ const NavigationMenu = (props) => {
           >
             About
           </Link>
-
           <Link
             className="link"
             to="/work"

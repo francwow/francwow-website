@@ -569,7 +569,27 @@ h2 {
   color: white;
 }
 
+.rotate-item {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 40%;
+  background-color: white;
+  animation: rotate 5s ease infinite;
+}
+
 /* Keyframe animations */
+@keyframes rotate {
+  from {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  to {
+    transform: rotate3d(0, 0, 1, 360deg);
+  }
+}
+
 @keyframes navLinkFade {
   from {
     opacity: 0;
