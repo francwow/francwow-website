@@ -12,7 +12,6 @@ const MainSection = () => {
   const arrowHandle = () => {
     setVisible((visible) => !visible);
     setShowPortfolio((showPortfolio) => !showPortfolio);
-    console.log(visible);
   };
 
   return (

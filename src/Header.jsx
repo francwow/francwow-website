@@ -27,7 +27,10 @@ const Header = (props) => {
             <div className="line_3"></div>
           </button>
         </div>
-        <NavigationMenu setMenuActive={props} menuActive={menuActive} />
+        <NavigationMenu
+          setMenuActive={props.setMenuActive}
+          menuActive={menuActive}
+        />
       </div>
     </div>
   );
