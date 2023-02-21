@@ -33,6 +33,7 @@ const Description = (props) => {
     if (timeInSecond - last >= speed) {
       last = timeInSecond;
       setStickVisible((prevState) => !prevState);
+      console.log(stickVisible);
     }
 
     requestAnimationFrame(loopAnimation);

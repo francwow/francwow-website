@@ -366,7 +366,6 @@ h2 {
 
 .info-link-container {
   position: relative;
-  font-size: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -454,20 +453,21 @@ h2 {
 }
 
 .portfolio-container.visible .info-link-container:first-child h2 {
-  animation: headerLeft 1s ease-in-out forwards 0.5s;
+  animation: headerLeft 1s ease forwards 0.5s;
 }
 
 .portfolio-container.visible .info-link-container:nth-child(2) h2 {
-  animation: headerRight 1s ease-in-out forwards 0.8s;
+  animation: headerRight 1s ease forwards 0.8s;
 }
 
 .portfolio-container.visible .info-link-container:last-child h2 {
-  animation: headerLeft 1s ease-in-out forwards 1.1s;
+  animation: headerLeft 1s ease forwards 1.1s;
 }
 
 .info-link-container h2 {
   opacity: 0;
   font-family: var(--font-body);
+  font-size: 2.5rem;
 }
 
 .info-img {
@@ -488,6 +488,71 @@ h2 {
   transform: scale(1.2);
 }
 
+/* <About /> */
+.about-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  width: 100%;
+  min-height: calc(100vh - 69px);
+}
+
+.about-background {
+  background-image: url(../assets/building_3.webp);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-color: var(--bg-color-three);
+}
+
+.about-intro-container {
+  background-color: black;
+  padding: 10vw;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-intro-info {
+  font-family: var(--font-body);
+}
+
+.about-intro-header h2 {
+  font-family: var(--font-code);
+  animation: headerLeft 1.5s ease forwards;
+}
+
+.about-intro-description {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-intro-description p {
+  line-height: 1.4rem;
+}
+
+.about-intro-description a {
+  color: var(--bg-color-three);
+}
+
+.about-intro-img img {
+}
+
+.desc-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: black;
+  animation: moveOverlay 4s ease-out forwards;
+}
+
 /* <Contact /> */
 .contact-wrapper {
   display: flex;
@@ -496,7 +561,6 @@ h2 {
   align-items: center;
   color: white;
   text-align: center;
-  background-color: var(--bg-color-two);
   width: 100%;
   min-height: calc(100vh - 69px);
   padding: 20px;
@@ -514,6 +578,7 @@ h2 {
 .contact-wrapper h1 {
   font-size: 2.5rem;
   margin: 20px;
+  animation: headerLeft 2s ease forwards;
 }
 
 .contact-wrapper p {
@@ -830,6 +895,15 @@ h2 {
   to {
     transform: translate3d(0, 0, 0);
     opacity: 1;
+  }
+}
+
+@keyframes moveOverlay {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 100%, 0);
   }
 }
 

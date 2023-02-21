@@ -1,7 +1,6 @@
-import { useContext, useRef, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import MenuActiveContext from "./contexts/menuActiveContext";
 import Description from "./Description";
-import Footer from "./Footer";
 import Portfolio from "./Portfolio";
 
 const MainSection = () => {

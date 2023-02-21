@@ -1,10 +1,9 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import MenuActiveContext from "./contexts/menuActiveContext";
 import Footer from "./Footer";
 import Icons from "./Icons";
 
 const Contact = () => {
-  const color = true;
   const menuActive = useContext(MenuActiveContext);
 
   return (
@@ -30,7 +29,6 @@ const Contact = () => {
             </button>
           </div>
         </div>
-
         <div className="footer-wrapper">
           <Icons />
           <Footer />
