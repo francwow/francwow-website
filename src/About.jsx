@@ -40,7 +40,7 @@ const About = () => {
                 profileInView ? "desc-overlay imgShow" : "desc-overlay"
               }
             ></div>
-            <img src="src/assets/profilepic.webp" alt="Francisco smiling" />
+            <img src="/profilepic.webp" alt="Francisco smiling" />
           </div>
         </div>
         <div className="about-hobbies">
@@ -61,7 +61,7 @@ const About = () => {
             <div
               className={deskInView ? "desc-overlay imgShow" : "desc-overlay"}
             ></div>
-            <img src="src/assets/desk.webp" alt="Francisco smiling" />
+            <img src="/desk.webp" alt="office desk" />
           </div>
           <div className="about-intro-description">
             <p>

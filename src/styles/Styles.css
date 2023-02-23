@@ -246,7 +246,7 @@ h2 {
 }
 
 .main-background {
-  background-image: url(../assets/beach.webp);
+  background-image: url(/beach.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -397,7 +397,7 @@ h2 {
 }
 
 .info-link-container:first-child {
-  background-image: url(../assets/running.webp);
+  background-image: url(/running.webp);
   background-position: top;
   background-size: cover;
   background-color: rgb(125, 92, 92);
@@ -407,7 +407,7 @@ h2 {
 }
 
 .info-link-container:nth-child(2) {
-  background-image: url(../assets/front-end.webp);
+  background-image: url(/front-end.webp);
   background-position: center;
   background-size: cover;
   background-color: rgb(125, 92, 92);
@@ -418,7 +418,7 @@ h2 {
 }
 
 .info-link-container:last-child {
-  background-image: url(../assets/contact.webp);
+  background-image: url(/contact.webp);
   background-position: center;
   background-size: cover;
   background-color: rgb(125, 92, 92);
@@ -471,7 +471,7 @@ h2 {
 }
 
 .info-img {
-  background-image: url(../assets/building_2.webp);
+  background-image: url(/building_2.webp);
   background-position: bottom;
   background-size: cover;
   background-blend-mode: multiply;
@@ -578,7 +578,7 @@ h2 {
 }
 
 .contact-background {
-  background-image: url(../assets/building.webp);
+  background-image: url(/building.webp);
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
