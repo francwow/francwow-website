@@ -500,26 +500,24 @@ h2 {
 }
 
 .about-background {
-  background-image: url(../assets/building_3.webp);
+  /* background-image: url(../assets/building_3.webp);
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  background-blend-mode: multiply;
-  background-color: var(--bg-color-three);
+  background-blend-mode: multiply; */
+  background-color: black;
 }
 
-.about-intro-container {
-  background-color: black;
-  padding: 10vw;
+.about-intro-container,
+.about-hobbies {
+  position: relative;
+  font-family: var(--font-body);
+  padding: 20px clamp(10px, 5%, 30px);
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.about-intro-info {
-  font-family: var(--font-body);
 }
 
 .about-intro-header h2 {
@@ -540,17 +538,30 @@ h2 {
   color: var(--bg-color-three);
 }
 
+.about-intro-img {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
 .about-intro-img img {
 }
 
 .desc-overlay {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
+  width: 110%;
+  height: 110%;
+  opacity: 1;
+  transform: scale(1);
+  transform-origin: right;
   background-color: black;
-  animation: moveOverlay 4s ease-out forwards;
+  transition: all 1s ease-in-out;
+}
+
+.imgShow {
+  transform: scale(0, 1);
+  transform-origin: right;
 }
 
 /* <Contact /> */
@@ -589,6 +600,7 @@ h2 {
 
 /* <Footer /> */
 .footer-wrapper {
+  margin-top: 20px;
   width: 100%;
   display: flex;
   flex-direction: column;
