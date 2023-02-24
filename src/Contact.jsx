@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import MenuActiveContext from "./contexts/menuActiveContext";
 import Footer from "./Footer";
+import Asteroids from "./Asteroids";
 import Icons from "./Icons";
 
 const Contact = () => {
@@ -11,6 +12,7 @@ const Contact = () => {
       className={`main-section ${menuActive ? "move-left" : ""} invert-color`}
     >
       <div className="contact-wrapper contact-background">
+        <Asteroids />
         <div className="contact-container">
           <h1>I would love to work with you!</h1>
           <p>

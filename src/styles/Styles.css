@@ -215,7 +215,7 @@ h2 {
   color: white;
   font-family: var(--font-body);
   font-weight: 100;
-  font-size: 1.3rem;
+  font-size: 1.7rem;
   transition: all 0.2s ease-in-out;
 }
 
@@ -262,6 +262,7 @@ h2 {
 
 .move-left {
   transform: translate3d(-120px, 0, 0);
+  filter: blur(2px);
 }
 
 .main-section h1 {
@@ -273,7 +274,7 @@ h2 {
   position: relative;
   overflow-y: hidden;
   width: 100%;
-  height: calc(100vh - 69px);
+  height: calc(100vh - 138px);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -339,6 +340,53 @@ h2 {
   margin: 5px 0;
   justify-content: center;
   align-items: center;
+}
+
+.arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 69px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: var(--bg-color-one);
+}
+
+.arrow-container {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  animation: arrowFade 2s ease forwards;
+  animation-delay: 1s;
+}
+
+.arrow {
+  right: calc(50% - 6px);
+  position: absolute;
+  display: block;
+  transform: rotate(45deg);
+  width: 30px;
+  height: 5px;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.arrow::after {
+  content: "";
+  display: block;
+  transform: rotate(-90deg) translate3d(13px, 13px, 0);
+  width: 30px;
+  height: 5px;
+  background-color: white;
 }
 
 /* <Portfolio /> */
@@ -512,7 +560,7 @@ h2 {
 .about-hobbies {
   position: relative;
   font-family: var(--font-body);
-  padding: 20px clamp(10px, 5%, 30px);
+  padding: 10vw;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -521,6 +569,7 @@ h2 {
 }
 
 .about-intro-header h2 {
+  font-size: 2rem;
   font-family: var(--font-code);
   animation: headerLeft 1.5s ease forwards;
 }
@@ -531,6 +580,7 @@ h2 {
 }
 
 .about-intro-description p {
+  font-size: 1rem;
   line-height: 1.4rem;
 }
 
@@ -540,7 +590,6 @@ h2 {
 
 .about-intro-img {
   position: relative;
-  height: 100%;
   width: 100%;
   overflow: hidden;
 }
@@ -566,6 +615,8 @@ h2 {
 
 /* <Contact /> */
 .contact-wrapper {
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -641,15 +692,31 @@ h2 {
   z-index: 9999;
 }
 
-.asteroid-container {
+.asteroid-container:first-child {
+  opacity: 0;
   position: absolute;
   animation: asteroidImpact 5s ease infinite;
+}
+
+.asteroid-container:nth-child(2) {
+  opacity: 0;
+  position: absolute;
+  top: 50px;
+  animation: asteroidImpact 5s ease infinite 3s;
+}
+
+.asteroid-container:last-child {
+  opacity: 0;
+  position: absolute;
+  top: 80px;
+  animation: asteroidImpact 5s ease infinite 4.5s;
 }
 
 .asteroid {
   display: block;
   height: 70px;
-  width: 2px;
+  border-radius: 100vw;
+  width: 3px;
   background-color: white;
   transform: rotate(65deg);
 }
@@ -718,22 +785,6 @@ h2 {
 
 .icon:hover svg {
   fill: white;
-}
-
-.arrow-container {
-  position: fixed;
-  bottom: 30px;
-  right: 25px;
-  cursor: pointer;
-  z-index: 999;
-  opacity: 0;
-  animation: arrowFade 2s ease forwards;
-  animation-delay: 1s;
-}
-
-.arrow {
-  transform: scale(2.5);
-  color: white;
 }
 
 .rotate-item {

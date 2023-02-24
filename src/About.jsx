@@ -9,9 +9,11 @@ const About = () => {
   const menuActive = useContext(MenuActiveContext);
   const { ref: profileRef, inView: profileInView } = useInView({
     threshold: 0.3,
+    triggerOnce: true,
   });
   const { ref: deskRef, inView: deskInView } = useInView({
     threshold: 0.3,
+    triggerOnce: true,
   });
 
   return (

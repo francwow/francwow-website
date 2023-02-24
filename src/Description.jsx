@@ -7,37 +7,38 @@ const Description = (props) => {
   const stickRef = useRef(null);
 
   useEffect(() => {
-    // loop();
+    loop();
     // requestAnimationFrame
-    loopAnimation();
+    // loopAnimation();
     return () => {
       clearInterval(stickLoopInterval);
     };
   }, []);
 
-  // const loop = () => {
-  //   stickLoopInterval = setInterval(() => {
-  //     stickRef.current.classList.toggle("visible");
-  //   }, 500);
-  // };
+  const loop = () => {
+    stickLoopInterval = setInterval(() => {
+      stickRef.current.classList.toggle("visible");
+      console.log(stickVisible);
+    }, 500);
+  };
 
   // requestAnimationFrame
-  let requestAnimationFrame = window.requestAnimationFrame;
+  // let requestAnimationFrame = window.requestAnimationFrame;
 
-  let last = 0;
-  let speed = 0.5;
+  // let last = 0;
+  // let speed = 0.5;
 
-  function loopAnimation(timeStamp) {
-    let timeInSecond = timeStamp / 1000;
+  // function loopAnimation(timeStamp) {
+  //   let timeInSecond = timeStamp / 1000;
 
-    if (timeInSecond - last >= speed) {
-      last = timeInSecond;
-      setStickVisible((prevState) => !prevState);
-      console.log(stickVisible);
-    }
+  //   if (timeInSecond - last >= speed) {
+  //     last = timeInSecond;
+  //     setStickVisible((prevState) => !prevState);
+  //     console.log(stickVisible);
+  //   }
 
-    requestAnimationFrame(loopAnimation);
-  }
+  //   requestAnimationFrame(loopAnimation);
+  // }
 
   return (
     <div

@@ -13,11 +13,21 @@ const MainSection = () => {
     setShowPortfolio((showPortfolio) => !showPortfolio);
   };
 
+  let style = {
+    backgroundImage: "url(/beach.webp)",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundBlendMode: "multiply",
+    backgroundColor: "var(--bg-color-three)",
+  };
+
   return (
     <div
-      className={`main-section main-background ${
-        menuActive ? "move-left" : ""
-      } ${showPortfolio ? "" : ""}`}
+      style={style}
+      className={`main-section ${menuActive ? "move-left" : ""} ${
+        showPortfolio ? "" : ""
+      }`}
     >
       <div className="home-wrapper">
         <div className="fos-presentation">
@@ -27,21 +37,25 @@ const MainSection = () => {
             tabIndex="0"
             role="button"
             aria-pressed="false"
-            style={
-              showPortfolio
-                ? { transform: "rotate(180deg)" }
-                : { transform: "rotate(0deg)" }
-            }
-            className="arrow-container"
             onKeyDown={(e) => e.preventDefault}
             onClick={arrowHandle}
+            className="arrow-wrapper"
           >
-            <span
-              style={showPortfolio ? { color: "inherit" } : { color: "white" }}
-              className="material-symbols-outlined arrow"
+            <div
+              style={
+                showPortfolio
+                  ? { transform: "rotate(180deg)" }
+                  : { transform: "rotate(0deg)" }
+              }
+              className="arrow-container"
             >
-              expand_circle_down
-            </span>
+              <span
+                style={
+                  showPortfolio ? { color: "inherit" } : { color: "white" }
+                }
+                className="arrow"
+              ></span>
+            </div>
           </div>
         </div>
       </div>
