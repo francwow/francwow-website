@@ -281,7 +281,7 @@ h2 {
 }
 
 .description-container {
-  padding: 0 40px;
+  padding: 0 30px;
   transition: all 0.5s ease-in-out;
 }
 
@@ -568,6 +568,36 @@ h2 {
   align-items: center;
 }
 
+.box-wrapper {
+  position: absolute;
+  top: 5%;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-wrapper-inverted {
+  position: absolute;
+  bottom: 5%;
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-container {
+  opacity: 0;
+  width: 10px;
+  height: 10px;
+  background-color: gray;
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+}
+
 .about-intro-header h2 {
   font-size: 2rem;
   font-family: var(--font-code);
@@ -611,9 +641,6 @@ h2 {
 .imgShow {
   transform: scale(0, 1);
   transform-origin: right;
-}
-
-.box-wrapper {
 }
 
 /* <Contact /> */
@@ -788,6 +815,27 @@ h2 {
 
 .icon:hover svg {
   fill: white;
+}
+
+/* random ideas */
+.work-container {
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+.curve {
+  /* width: 300px;
+  height: 100px;
+  border: 5px solid black;
+  border-color: #000 transparent transparent transparent;
+  border-radius: 50%/100px 100px 0 0; */
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  box-shadow: 15px 15px 0 0 white;
+  border: 2px solid rgba(255, 0, 0, 0.343);
 }
 
 .rotate-item {
@@ -970,6 +1018,40 @@ h2 {
   }
   to {
     transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes moveBox {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate3d(0, -15px, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+  }
+}
+
+@keyframes moveBoxInverted {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate3d(0, 15px, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
   }
 }
 

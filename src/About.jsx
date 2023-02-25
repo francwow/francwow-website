@@ -47,6 +47,7 @@ const About = () => {
           </div>
         </div>
         <div className="about-hobbies">
+          <Boxes inverted={true} />
           <div className="hobbies-info">
             <div className="hobbies-header">
               <h2>Other stuff I&apos;m into</h2>
