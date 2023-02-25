@@ -13,21 +13,21 @@ const MainSection = () => {
     setShowPortfolio((showPortfolio) => !showPortfolio);
   };
 
-  let style = {
-    backgroundImage: "url(/beach.webp)",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    backgroundBlendMode: "multiply",
-    backgroundColor: "var(--bg-color-three)",
-  };
+  // let style = {
+  //   backgroundImage: "url(/beach.webp)",
+  //   backgroundPosition: "center",
+  //   backgroundRepeat: "no-repeat",
+  //   backgroundSize: "cover",
+  //   backgroundBlendMode: "multiply",
+  //   backgroundColor: "var(--bg-color-three)",
+  // };
 
   return (
     <div
-      style={style}
-      className={`main-section ${menuActive ? "move-left" : ""} ${
-        showPortfolio ? "" : ""
-      }`}
+      // style={style}
+      className={`main-section main-background ${
+        menuActive ? "move-left" : ""
+      } ${showPortfolio ? "" : ""}`}
     >
       <div className="home-wrapper">
         <div className="fos-presentation">

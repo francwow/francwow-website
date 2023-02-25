@@ -262,7 +262,6 @@ h2 {
 
 .move-left {
   transform: translate3d(-120px, 0, 0);
-  filter: blur(2px);
 }
 
 .main-section h1 {
@@ -282,11 +281,12 @@ h2 {
 }
 
 .description-container {
-  padding: 0 20px;
+  padding: 0 40px;
   transition: all 0.5s ease-in-out;
 }
 
 .description {
+  margin: 10px 0;
   position: relative;
   display: flex;
   justify-content: flex-start;
@@ -611,6 +611,9 @@ h2 {
 .imgShow {
   transform: scale(0, 1);
   transform-origin: right;
+}
+
+.box-wrapper {
 }
 
 /* <Contact /> */

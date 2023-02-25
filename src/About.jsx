@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer";
 import MenuActiveContext from "./contexts/menuActiveContext";
 import Icons from "./Icons";
 import Footer from "./Footer";
+import Boxes from "./Boxes";
 
 const About = () => {
   const menuActive = useContext(MenuActiveContext);
@@ -13,7 +14,6 @@ const About = () => {
   });
   const { ref: deskRef, inView: deskInView } = useInView({
     threshold: 0.3,
-    triggerOnce: true,
   });
 
   return (
@@ -22,6 +22,7 @@ const About = () => {
     >
       <div className="about-wrapper about-background">
         <div className="about-intro-container">
+          <Boxes />
           <div className="about-intro-info">
             <div className="about-intro-header">
               <h2>Hello World!</h2>
@@ -63,7 +64,7 @@ const About = () => {
             <div
               className={deskInView ? "desc-overlay imgShow" : "desc-overlay"}
             ></div>
-            <img src="/desk.webp" alt="office desk" />
+            <img loading="lazy" src="/desk.webp" alt="office desk" />
           </div>
           <div className="about-intro-description">
             <p>
