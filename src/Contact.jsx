@@ -10,9 +10,7 @@ const Contact = () => {
   const { englishActive } = useContext(LanguageContext);
 
   return (
-    <div
-      className={`main-section ${menuActive ? "move-left" : ""} invert-color`}
-    >
+    <div className={`main-section ${menuActive ? "move-left" : ""}`}>
       <div className="contact-wrapper contact-background">
         <Asteroids />
         {englishActive ? (
@@ -36,7 +34,9 @@ const Contact = () => {
           </div>
         ) : (
           <div className="contact-container">
-            <h1>Me encantaría trabajar contigo!</h1>
+            <h1 style={{ fontSize: "2.2rem" }}>
+              ¡Me encantaría trabajar contigo!
+            </h1>
             <p>
               Estoy ansioso por continuar creciendo como desarrollador
               front-end. Envíame un mensaje en cualquier momento.

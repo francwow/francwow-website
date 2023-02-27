@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import LanguageContext from "./contexts/languageContext";
 
 const Portfolio = (props) => {
-  const { englishActive, setEnglishActive } = useContext(LanguageContext);
+  const { englishActive } = useContext(LanguageContext);
 
   return (
     <div

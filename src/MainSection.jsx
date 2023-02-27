@@ -8,7 +8,6 @@ const MainSection = () => {
   const [showPortfolio, setShowPortfolio] = useState(false);
   const [visible, setVisible] = useState(false);
   const { menuActive } = useContext(MenuActiveContext);
-  const { englishActive, setEnglishActive } = useContext(LanguageContext);
 
   const arrowHandle = () => {
     setVisible((visible) => !visible);
@@ -31,7 +30,9 @@ const MainSection = () => {
             aria-pressed="false"
             onKeyDown={(e) => e.preventDefault}
             onClick={arrowHandle}
-            className="arrow-wrapper"
+            className={
+              showPortfolio ? "arrow-wrapper-expanded" : "arrow-wrapper"
+            }
           >
             <div
               style={

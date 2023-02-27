@@ -70,7 +70,7 @@ const Description = (props) => {
         </div>
       ) : (
         <div>
-          <div className="description">
+          <div style={{ paddingLeft: "15px" }} className="description">
             <p className="desc-text-one">Hola!</p>
           </div>
           <div className="description">
@@ -79,8 +79,8 @@ const Description = (props) => {
             </strong>
           </div>
           <div className="description">
-            <p className="desc-text-three">
-              Me encanta crear páginas web.
+            <p className="desc-text-three-esp">
+              diseño y desarrollo front-end.
               <span
                 ref={stickRef}
                 className={stickVisible ? "text-stick visible" : "text-stick"}
