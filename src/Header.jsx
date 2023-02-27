@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import MenuActiveContext from "./contexts/menuActiveContext";
 import NavigationMenu from "./NavigationMenu";
 
-const Header = (props) => {
-  const menuActive = useContext(MenuActiveContext);
+const Header = () => {
+  const { menuActive, setMenuActive } = useContext(MenuActiveContext);
 
   return (
     <div className="header">
       <div className="main-nav">
-        <Link to="/" onClick={() => props.setMenuActive(false)}>
+        <Link to="/" onClick={() => setMenuActive(false)}>
           <div className="logo">
             <span>{`FOS={webDeveloper}`}</span>
           </div>
@@ -18,7 +18,7 @@ const Header = (props) => {
         <div className="burger">
           <button
             onClick={() => {
-              props.setMenuActive(!menuActive);
+              setMenuActive(!menuActive);
             }}
             className={menuActive ? "burger-btn toggle" : "burger-btn"}
           >
@@ -27,10 +27,7 @@ const Header = (props) => {
             <div className="line_3"></div>
           </button>
         </div>
-        <NavigationMenu
-          setMenuActive={props.setMenuActive}
-          menuActive={menuActive}
-        />
+        <NavigationMenu setMenuActive={setMenuActive} menuActive={menuActive} />
       </div>
     </div>
   );

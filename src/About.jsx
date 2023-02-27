@@ -5,9 +5,11 @@ import MenuActiveContext from "./contexts/menuActiveContext";
 import Icons from "./Icons";
 import Footer from "./Footer";
 import Boxes from "./Boxes";
+import LanguageContext from "./contexts/languageContext";
 
 const About = () => {
-  const menuActive = useContext(MenuActiveContext);
+  const { menuActive } = useContext(MenuActiveContext);
+  const { englishActive } = useContext(LanguageContext);
   const { ref: profileRef, inView: profileInView } = useInView({
     threshold: 0.3,
     triggerOnce: true,
@@ -23,20 +25,39 @@ const About = () => {
       <div className="about-wrapper about-background">
         <div className="about-intro-container">
           <Boxes />
-          <div className="about-intro-info">
-            <div className="about-intro-header">
-              <h2>Hello World!</h2>
+          {englishActive ? (
+            <div className="about-intro-info">
+              <div className="about-intro-header">
+                <h2>Hello World!</h2>
+              </div>
+              <div className="about-intro-description">
+                <p>
+                  My name is Francisco Osorio Silva. Im an adventure seeker,
+                  animal lover, running enthusiast and avid gamer, who enjoys
+                  learning and overcoming challenges.
+                  <br></br>
+                  <br></br>
+                </p>
+              </div>
             </div>
-            <div className="about-intro-description">
-              <p>
-                My name is Francisco Osorio Silva. Im an adventure seeker,
-                animal lover, running enthusiast and avid gamer, who enjoys
-                learning and overcoming challenges.
-                <br></br>
-                <br></br>
-              </p>
+          ) : (
+            <div className="about-intro-info">
+              <div className="about-intro-header">
+                <h2>¡Hola Mundo!</h2>
+              </div>
+              <div className="about-intro-description">
+                <p>
+                  Me llamo Francisco Osorio Silva. Soy una persona aventurera,
+                  amante de los animales, que se divierte corriendo y jugando
+                  videojuegos. Disfruto mucho aprendiendo nuevas habilidades y
+                  superando obstáculos.
+                  <br></br>
+                  <br></br>
+                </p>
+              </div>
             </div>
-          </div>
+          )}
+
           <div ref={profileRef} className="about-intro-img">
             <div
               className={
@@ -50,14 +71,15 @@ const About = () => {
           <Boxes inverted={true} />
           <div className="hobbies-info">
             <div className="hobbies-header">
-              <h2>Other stuff I&apos;m into</h2>
+              <h2>Otras cosas que disfruto</h2>
             </div>
             <div className="about-intro-description">
               <p>
-                I love to go for long runs in the morning right after my first
-                coffee. I enjoy reading about sicence, psychology and human
-                interactions. People are very important to me, I like to visit
-                friends and family whenever I can.
+                Amo trotar largas distancias en la mañana justo despues de mi
+                primer café. Me encanta leer acerca de ciencia, psicología e
+                interacciones humanas. Las personas son muy importantes para mi.
+                Me gusta visitar a mis amigos y familiares cada vez que tengo la
+                posibilidad.
               </p>
             </div>
           </div>
@@ -69,16 +91,16 @@ const About = () => {
           </div>
           <div className="about-intro-description">
             <p>
-              I&apos;ve been learning front-end development for the last 12
-              months. I love everything about this craft, from designing the
-              layout of a website and picking the right color composition, to
-              writing DRY Javascript and meaningful CSS classes. I can&apos;t
-              get enough of it. It&apos;s been a fantastic journey so far.
+              He estado aprendiendo desarrollo front-end los últimos 12 meses.
+              Me encanta todo acerca de este oficio. Desde el diseño del layout
+              y la elección de los colores adecuados, hasta escribir DRY
+              Javascript y clases significativas en CSS, disfruto mucho todo el
+              proceso. Ha sido un viaje fantástico.
               <br></br>
               <br></br>
-              I&apos;ve had the opportunity of working on freelance projects for
-              real clients, and playing with fun personal ideas. You can find
-              all my work <Link to="/work">here</Link>.
+              Este año he tenido la oportunidad de trabajar en proyectos
+              freelance para clientes reales y desarrollar ideas divertidas.
+              Puedes encontrar todo mi trabajo <Link to="/work">aquí</Link>.
             </p>
           </div>
         </div>

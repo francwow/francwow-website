@@ -231,6 +231,23 @@ h2 {
   animation: navLinkFadeOut 1s ease backwards;
 }
 
+.lang-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.lang-container {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.lang {
+  font-size: 1.2rem;
+}
+
 /* <MainSection /> */
 .main-section {
   display: flex;
@@ -807,6 +824,7 @@ h2 {
 }
 
 .icon svg {
+  display: block;
   width: 40px;
   height: 40px;
   margin: 5px;

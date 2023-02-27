@@ -1,10 +1,12 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useContext } from "react";
+import LanguageContext from "./contexts/languageContext";
 
 const Description = (props) => {
   // requestAnimationFrame
   const [stickVisible, setStickVisible] = useState(false);
   let stickLoopInterval = null;
   const stickRef = useRef(null);
+  const { englishActive } = useContext(LanguageContext);
 
   useEffect(() => {
     loop();
@@ -46,26 +48,47 @@ const Description = (props) => {
         props.visible ? "description-container hide" : "description-container"
       }
     >
-      <div className="description">
-        <p className="desc-text-one">Hi!</p>
-      </div>
-      <div className="description">
-        <strong>
-          <p className="desc-text-two">My name is Francisco,</p>
-        </strong>
-      </div>
-      <div className="description">
-        <p className="desc-text-three">
-          I love building websites.{" "}
-          <span
-            ref={stickRef}
-            className={stickVisible ? "text-stick visible" : "text-stick"}
-          ></span>
-        </p>
-      </div>
-      {/* <div className="about-link-container">
-        <button className="btn">Contact me</button>
-      </div> */}
+      {englishActive ? (
+        <div>
+          <div className="description">
+            <p className="desc-text-one">Hi!</p>
+          </div>
+          <div className="description">
+            <strong>
+              <p className="desc-text-two">My name is Francisco,</p>
+            </strong>
+          </div>
+          <div className="description">
+            <p className="desc-text-three">
+              I love building websites.{" "}
+              <span
+                ref={stickRef}
+                className={stickVisible ? "text-stick visible" : "text-stick"}
+              ></span>
+            </p>
+          </div>
+        </div>
+      ) : (
+        <div>
+          <div className="description">
+            <p className="desc-text-one">Hola!</p>
+          </div>
+          <div className="description">
+            <strong>
+              <p className="desc-text-two">Me llamo Francisco,</p>
+            </strong>
+          </div>
+          <div className="description">
+            <p className="desc-text-three">
+              Me encanta crear páginas web.
+              <span
+                ref={stickRef}
+                className={stickVisible ? "text-stick visible" : "text-stick"}
+              ></span>
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

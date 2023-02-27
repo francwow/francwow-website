@@ -1,9 +1,9 @@
 import { useRef, useContext } from "react";
 import MenuActiveContext from "./contexts/menuActiveContext";
 
-const Overlay = (props) => {
+const Overlay = () => {
   const overlayRef = useRef(null);
-  const menuActive = useContext(MenuActiveContext);
+  const { menuActive, setMenuActive } = useContext(MenuActiveContext);
 
   return (
     <div
@@ -11,7 +11,7 @@ const Overlay = (props) => {
       role="button"
       aria-pressed="false"
       onKeyDown={(e) => e.preventDefault}
-      onClick={() => props.setMenuActive(false)}
+      onClick={() => setMenuActive(false)}
       ref={overlayRef}
       className={menuActive ? "overlay active" : "overlay"}
     ></div>

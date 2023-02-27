@@ -1,30 +1,22 @@
 import { useContext, useState } from "react";
 import MenuActiveContext from "./contexts/menuActiveContext";
+import LanguageContext from "./contexts/languageContext";
 import Description from "./Description";
 import Portfolio from "./Portfolio";
 
 const MainSection = () => {
   const [showPortfolio, setShowPortfolio] = useState(false);
   const [visible, setVisible] = useState(false);
-  const menuActive = useContext(MenuActiveContext);
+  const { menuActive } = useContext(MenuActiveContext);
+  const { englishActive, setEnglishActive } = useContext(LanguageContext);
 
   const arrowHandle = () => {
     setVisible((visible) => !visible);
     setShowPortfolio((showPortfolio) => !showPortfolio);
   };
 
-  // let style = {
-  //   backgroundImage: "url(/beach.webp)",
-  //   backgroundPosition: "center",
-  //   backgroundRepeat: "no-repeat",
-  //   backgroundSize: "cover",
-  //   backgroundBlendMode: "multiply",
-  //   backgroundColor: "var(--bg-color-three)",
-  // };
-
   return (
     <div
-      // style={style}
       className={`main-section main-background ${
         menuActive ? "move-left" : ""
       } ${showPortfolio ? "" : ""}`}
