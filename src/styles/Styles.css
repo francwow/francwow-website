@@ -714,8 +714,10 @@ h2 {
 }
 
 .work-container {
+  position: relative;
   display: flex;
-  height: 90%;
+  align-items: center;
+  height: 80vh;
   margin: auto;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -723,9 +725,20 @@ h2 {
 }
 
 .work-item {
-  width: 300px;
-  min-height: 300px;
+  display: block;
+  scroll-snap-align: start;
+  min-width: 300px;
+  height: 300px;
   background-color: white;
+  border: 1px solid black;
+  padding: 5px;
+  opacity: 0.5;
+  transition: all 0.3s ease-in-out;
+}
+
+.item-expand {
+  opacity: 1;
+  height: 450px;
 }
 
 /* <Contact /> */
