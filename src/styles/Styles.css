@@ -692,7 +692,7 @@ h2 {
 /* <Work /> */
 .work-wrapper {
   position: relative;
-  overflow: hidden;
+  overflow-y: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -711,6 +711,21 @@ h2 {
   background-size: cover;
   background-blend-mode: multiply;
   background-color: var(--bg-color-three);
+}
+
+.work-container {
+  display: flex;
+  height: 90%;
+  margin: auto;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.work-item {
+  width: 300px;
+  min-height: 300px;
+  background-color: white;
 }
 
 /* <Contact /> */
