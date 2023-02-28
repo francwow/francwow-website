@@ -684,9 +684,10 @@ h2 {
   transition: all 1s ease-in-out;
 }
 
-.imgShow {
-  transform: scale(0, 1);
+.hide-overlay {
+  width: 0px;
   transform-origin: right;
+  animation: hideOverlay 0.8s ease-in forwards;
 }
 
 /* <Work /> */
@@ -1144,6 +1145,32 @@ h2 {
   100% {
     opacity: 0;
     transform: translate3d(0, 30px, 0);
+  }
+}
+
+@keyframes hideOverlay {
+  0% {
+    width: 110%;
+  }
+
+  50% {
+    width: 0px;
+  }
+
+  70% {
+    width: 15%;
+  }
+
+  85% {
+    width: 0px;
+  }
+
+  95% {
+    width: 5%;
+  }
+
+  100% {
+    width: 0px;
   }
 }
 
