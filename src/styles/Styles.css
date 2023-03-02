@@ -696,13 +696,13 @@ h2 {
   overflow-y: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   color: white;
   text-align: center;
   width: 100%;
-  min-height: calc(100vh - 69px);
   padding: 20px;
+  min-height: calc(100vh - 69px);
   scroll-behavior: smooth;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -724,7 +724,7 @@ h2 {
   align-items: center;
   width: fit-content;
   height: 80vh;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .work-item {
@@ -733,12 +733,11 @@ h2 {
   scroll-snap-align: center;
   min-width: 300px;
   height: 450px;
-  /* transform: rotate3d(1, 1, 1, 2deg); */
   background-color: white;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 0 5px;
   opacity: 0.5;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   overflow: hidden;
 }
 
@@ -749,11 +748,15 @@ h2 {
 
 .work-item img {
   max-width: 150%;
-  aspect-ratio: auto;
 }
 
 .img-expand {
   animation: imgExpand 10s ease infinite;
+}
+
+.work-wrapper .footer-wrapper {
+  position: fixed;
+  bottom: 0;
 }
 
 /* <Contact /> */
