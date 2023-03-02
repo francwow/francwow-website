@@ -44,7 +44,7 @@ const Work = () => {
               >
                 <img
                   className={item1InView ? "img-expand" : null}
-                  src="./public/deposito.webp"
+                  src="/deposito.webp"
                   alt="website from portfolio"
                 />
               </div>
@@ -56,7 +56,7 @@ const Work = () => {
               >
                 <img
                   className={item2InView ? "img-expand" : null}
-                  src="./public/latiendo.webp"
+                  src="/latiendo.webp"
                   alt="website from portfolio"
                 />
               </div>
@@ -68,7 +68,7 @@ const Work = () => {
               >
                 <img
                   className={item3InView ? "img-expand" : null}
-                  src="./public/flagFinder.webp"
+                  src="/flagFinder.webp"
                   alt="website from portfolio"
                 />
               </div>
@@ -80,7 +80,7 @@ const Work = () => {
               >
                 <img
                   className={item4InView ? "img-expand" : null}
-                  src="./public/eloquentjs.webp"
+                  src="/eloquentjs.webp"
                   alt="website from portfolio"
                 />
               </div>
@@ -92,7 +92,7 @@ const Work = () => {
               >
                 <img
                   className={item5InView ? "img-expand" : null}
-                  src="./public/franos.webp"
+                  src="/franos.webp"
                   alt="website from portfolio"
                 />
               </div>
@@ -104,7 +104,7 @@ const Work = () => {
               >
                 <img
                   className={item6InView ? "img-expand" : null}
-                  src="./public/arthas.webp"
+                  src="/arthas.webp"
                   alt="website from portfolio"
                 />
               </div>
@@ -116,7 +116,7 @@ const Work = () => {
               >
                 <img
                   className={item7InView ? "img-expand" : null}
-                  src="./public/fos.webp"
+                  src="/fos.webp"
                   alt="website from portfolio"
                 />
               </div>
