@@ -5,9 +5,7 @@ const Boxes = (props) => {
 
   useEffect(() => {
     boxAnimationHandle();
-    return () => {
-      console.log("boxes arent flying");
-    };
+    return () => {};
   }, []);
 
   function boxAnimationHandle() {

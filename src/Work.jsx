@@ -1,6 +1,6 @@
 import MenuActiveContext from "./contexts/menuActiveContext";
 import LanguageContext from "./contexts/languageContext";
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import { useMediaQuery } from "usehooks-ts";
 
@@ -32,10 +32,14 @@ const Work = () => {
   const matches = useMediaQuery("(max-width: 480px)");
 
   return (
-    <div className={`main-section ${menuActive ? "move-left" : ""}`}>
-      <div className="work-wrapper work-background">
+    <div className={`main-section  ${menuActive ? "move-left" : ""}`}>
+      <div
+        ref={contRef}
+        onScroll={() => console.log(contRef.current.scrollWidth)}
+        className="work-wrapper work-background"
+      >
         {matches ? (
-          <div ref={contRef} className="work-container">
+          <div className="work-container">
             <div
               ref={item1}
               className={item1InView ? "work-item item-expand" : "work-item"}
