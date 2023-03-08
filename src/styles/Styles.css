@@ -182,7 +182,7 @@ h2 {
     var(--bg-color-two)
   );
   transition: all 0.4s ease 0.5s;
-  z-index: 99;
+  z-index: 999;
 }
 
 .show {
@@ -693,7 +693,6 @@ h2 {
 /* <Work /> */
 .work-wrapper {
   position: relative;
-  overflow-y: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -701,12 +700,7 @@ h2 {
   color: white;
   text-align: center;
   width: 100%;
-  padding: 20px;
-  min-height: calc(100vh - 69px);
-  scroll-behavior: smooth;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+  height: calc(100vh - 69px);
 }
 
 .work-background {
@@ -721,24 +715,43 @@ h2 {
 .work-container {
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  width: fit-content;
-  height: 80vh;
-  margin: 0 auto;
+  width: 100vw;
+  height: 100%;
 }
 
 .work-item {
   position: relative;
   display: flex;
   scroll-snap-align: center;
-  min-width: 300px;
-  height: 450px;
+  width: 100vw;
+  height: 12.8vh;
   background-color: white;
-  border-radius: 10px;
-  margin: 0 5px;
-  opacity: 0.5;
+  border: 1px solid white;
+  margin: 0;
   transition: all 0.2s ease-in-out;
   overflow: hidden;
+}
+
+.work-item-container {
+  position: relative;
+}
+
+.work-item-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(255, 18, 113);
+  height: 100%;
+  width: 100%;
+  padding: 0 15px;
+}
+
+.work-item-info h2 {
+  color: white;
+  font-size: 1.2rem;
+  font-family: var(--font-body);
 }
 
 .item-expand {

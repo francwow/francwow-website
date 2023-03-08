@@ -1,14 +1,14 @@
 const Footer = (props) => {
   return (
     <div className="footer-container">
-      <span
+      <small
         style={
           props.color ? { color: "var(--bg-color-two)" } : { color: "white" }
         }
         className="footer"
       >
         Copyright © 2023 fos.com
-      </span>
+      </small>
     </div>
   );
 };
