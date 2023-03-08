@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
+import { workItems } from "./WorItems";
+import { useEffect } from "react";
 
 const WorkMobile = () => {
   const { ref: item1, inView: itemInView1 } = useInView({
@@ -24,15 +26,33 @@ const WorkMobile = () => {
     threshold: 0.9,
   });
 
+  const itemStyle = workItems.map((item) => {
+    const style = {
+      backgroundImage: `url(${item.imgsrc})`,
+      backgroundPosition: "top",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      backgroundBlendMode: "overlay",
+      backgroundColor: "rgb(5, 5, 13, .9)",
+    };
+
+    return style;
+  });
+
   return (
     <div className="work-container">
-      <Link to="https://www.depositosanantonio.com/" target="_blank">
+      <Link
+        style={{ "--i": "0" }}
+        to="https://www.depositosanantonio.com/"
+        target="_blank"
+      >
         <div ref={item1} className="work-item">
-          <div
-            style={{ backgroundColor: "var(--bg-color-three)" }}
-            className="work-item-info"
-          >
-            <h2>Depósito San Antonio Website</h2>
+          <div style={itemStyle[0]} className="work-item-info">
+            <div className="item-info">
+              <h2>Depósito San Antonio Website</h2>
+              <span>HTML | CSS</span>
+            </div>
+
             <span
               style={{ color: "white" }}
               className="material-symbols-outlined"
@@ -42,13 +62,18 @@ const WorkMobile = () => {
           </div>
         </div>
       </Link>
-      <Link to="https://www.latiendo.co/" target="_blank">
+      <Link
+        style={{ "--i": "1" }}
+        to="https://www.latiendo.co/"
+        target="_blank"
+      >
         <div ref={item2} className="work-item">
-          <div
-            style={{ backgroundColor: "rgb(255, 18, 220)" }}
-            className="work-item-info"
-          >
-            <h2>Latiendo Website</h2>
+          <div style={itemStyle[1]} className="work-item-info">
+            <div className="item-info">
+              <h2>Latiendo Website</h2>
+              <span>HTML | CSS | JavaScript</span>
+            </div>
+
             <span
               style={{ color: "white" }}
               className="material-symbols-outlined"
@@ -58,13 +83,18 @@ const WorkMobile = () => {
           </div>
         </div>
       </Link>
-      <Link to="https://flag-finder.vercel.app/" target="_blank">
+      <Link
+        style={{ "--i": "2" }}
+        to="https://flag-finder.vercel.app/"
+        target="_blank"
+      >
         <div ref={item3} className="work-item">
-          <div
-            style={{ backgroundColor: "rgb(255, 18, 250)" }}
-            className="work-item-info"
-          >
-            <h2>Flag Finder Webapp</h2>
+          <div style={itemStyle[2]} className="work-item-info">
+            <div className="item-info">
+              <h2>Flag Finder Webapp</h2>
+              <span>React | CSS</span>
+            </div>
+
             <span
               style={{ color: "white" }}
               className="material-symbols-outlined"
@@ -74,13 +104,18 @@ const WorkMobile = () => {
           </div>
         </div>
       </Link>
-      <Link to="https://eloquent-java-script.vercel.app/" target="_blank">
+      <Link
+        style={{ "--i": "3" }}
+        to="https://eloquent-java-script.vercel.app/"
+        target="_blank"
+      >
         <div ref={item4} className="work-item">
-          <div
-            style={{ backgroundColor: "rgb(230, 18, 255)" }}
-            className="work-item-info"
-          >
-            <h2>Eloquent Javascript Exercises</h2>
+          <div style={itemStyle[3]} className="work-item-info">
+            <div className="item-info">
+              <h2>Eloquent Javascript Exercises</h2>
+              <span>HTML | CSS | JavaScript</span>
+            </div>
+
             <span
               style={{ color: "white" }}
               className="material-symbols-outlined"
@@ -90,13 +125,18 @@ const WorkMobile = () => {
           </div>
         </div>
       </Link>
-      <Link to="https://franos-website.vercel.app/" target="_blank">
+      <Link
+        style={{ "--i": "4" }}
+        to="https://franos-website.vercel.app/"
+        target="_blank"
+      >
         <div ref={item5} className="work-item">
-          <div
-            style={{ backgroundColor: "rgb(215, 18, 255)" }}
-            className="work-item-info"
-          >
-            <h2>Responsive Design Website</h2>
+          <div style={itemStyle[4]} className="work-item-info">
+            <div className="item-info">
+              <h2>Responsive Design Website</h2>
+              <span>HTML | CSS | JavaScript</span>
+            </div>
+
             <span
               style={{ color: "white" }}
               className="material-symbols-outlined"
@@ -106,13 +146,18 @@ const WorkMobile = () => {
           </div>
         </div>
       </Link>
-      <Link to="https://arthas-menethil.vercel.app/" target="_blank">
+      <Link
+        style={{ "--i": "5" }}
+        to="https://arthas-menethil.vercel.app/"
+        target="_blank"
+      >
         <div ref={item6} className="work-item">
-          <div
-            style={{ backgroundColor: "rgb(190, 18, 255)" }}
-            className="work-item-info"
-          >
-            <h2>Arthas Menethil Tribute Page</h2>
+          <div style={itemStyle[5]} className="work-item-info">
+            <div className="item-info">
+              <h2>Arthas Menethil Tribute Page</h2>
+              <span>HTML | CSS | JavaScript</span>
+            </div>
+
             <span
               style={{ color: "white" }}
               className="material-symbols-outlined"
@@ -122,13 +167,18 @@ const WorkMobile = () => {
           </div>
         </div>
       </Link>
-      <Link to="https://francwow.github.io/" target="_blank">
+      <Link
+        style={{ "--i": "6" }}
+        to="https://francwow.github.io/"
+        target="_blank"
+      >
         <div ref={item7} className="work-item">
-          <div
-            style={{ backgroundColor: "rgb(170, 18, 255)" }}
-            className="work-item-info"
-          >
-            <h2>My First Portfolio Website</h2>
+          <div style={itemStyle[6]} className="work-item-info">
+            <div className="item-info">
+              <h2>My First Portfolio Website</h2>
+              <span>HTML | CSS</span>
+            </div>
+
             <span
               style={{ color: "white" }}
               className="material-symbols-outlined"
