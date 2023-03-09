@@ -12,7 +12,7 @@ const Work = () => {
   return (
     <div className={`main-section  ${menuActive ? "move-left" : ""}`}>
       <div ref={contRef} className="work-wrapper work-background">
-        {mobile ? <WorkMobile /> : <WorkDeskTop />}
+        {mobile ? <WorkMobile /> : <WorkMobile />}
       </div>
     </div>
   );

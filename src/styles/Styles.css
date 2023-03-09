@@ -381,6 +381,7 @@ h2 {
   bottom: 0;
   right: 0;
   left: 0;
+  cursor: pointer;
   border-radius: 70%/100px 100px 0 0;
   background-color: var(--bg-color-one);
   transition: all 0.3s ease;
@@ -397,6 +398,7 @@ h2 {
   bottom: 0;
   right: 0;
   left: 0;
+  cursor: pointer;
   background-color: var(--bg-color-one);
   transition: all 0.3s ease;
 }
@@ -468,6 +470,7 @@ h2 {
   height: 33.33%;
   overflow: hidden;
   background-color: var(--bg-color-three);
+  transition: all 0.3s ease;
 }
 
 .cover-1,
@@ -562,6 +565,7 @@ h2 {
   opacity: 0;
   font-family: var(--font-body);
   font-size: 2.5rem;
+  transition: all 0.3s ease;
 }
 
 .info-img {
@@ -1275,7 +1279,10 @@ h2 {
 }
 
 /* Media Queries */
+
+/* Medium devices */
 @media screen and (min-width: 481px) {
+  /* <NavigationMenu /> */
   .nav-menu-wrapper {
     width: 300px;
   }
@@ -1283,13 +1290,8 @@ h2 {
   .link {
     font-size: 1.5rem;
   }
-}
 
-@media screen and (min-width: 769px) {
-  .logo span {
-    font-size: 1.2rem;
-  }
-
+  /* <NavigationMenu /> */
   .nav-menu-wrapper {
     width: 500px;
   }
@@ -1297,18 +1299,71 @@ h2 {
   .link {
     font-size: 1.7rem;
   }
+
+  /* <MainSection /> */
+  .description {
+    margin: 15px 0;
+  }
+
+  .description p {
+    font-size: 3.5rem;
+  }
+
+  /* <Portfolio /> */
+  .info-link-container:hover {
+    height: 50%;
+    background-blend-mode: soft-light;
+  }
+
+  .info-link-container:hover h2 {
+    font-size: 4rem;
+    color: black;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+  }
 }
 
-@media screen and (min-width: 1025px) {
+/* Large devices */
+@media screen and (min-width: 991px) {
+  /* <Header /> */
   .logo span {
     font-size: 1.3rem;
   }
 
+  .main-nav {
+    padding: 0 40px;
+  }
+
+  /* <NavigationMenu /> */
   .nav-menu-wrapper {
     width: 500px;
   }
 
   .link {
     font-size: 1.7rem;
+  }
+
+  /* <MainSection /> */
+  .description {
+    margin: 20px 0;
+  }
+
+  .description p {
+    font-size: 4rem;
+  }
+
+  /* <Portfolio /> */
+  .info-link-container:hover {
+    height: 50%;
+    background-blend-mode: soft-light;
+  }
+
+  .info-link-container:hover h2 {
+    font-size: 4rem;
+    color: black;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
   }
 }
