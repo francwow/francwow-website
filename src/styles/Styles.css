@@ -9,10 +9,6 @@ html {
   overflow-x: hidden;
 }
 
-/* html::-webkit-scrollbar {
-  display: none;
-} */
-
 body {
   margin: 0;
   overflow-x: hidden;
@@ -23,6 +19,21 @@ body {
   --bg-color-two: rgb(163, 26, 203);
   --bg-color-three: deeppink;
   --bg-color-one-darker: rgb(40, 195, 212);
+}
+
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: #e7e7e7;
+  border: 1px solid #cacaca;
+}
+
+html::-webkit-scrollbar-thumb {
+  height: 50px;
+  background-color: #424242;
 }
 
 img {
@@ -46,6 +57,7 @@ h2 {
 
 .home-wrapper {
   width: 100%;
+  position: relative;
 }
 
 /* <Overlay /> */
@@ -78,6 +90,7 @@ h2 {
   bottom: auto;
   width: 100%;
   z-index: 99;
+  background-color: var(--bg-color-one);
 }
 
 .main-nav {
@@ -86,9 +99,10 @@ h2 {
   align-items: center;
   justify-content: space-between;
   padding: 0 15px;
-  background-color: var(--bg-color-one);
   color: white;
   height: 69px;
+  max-width: 1800px;
+  margin: auto;
 }
 
 .logo {
@@ -289,7 +303,7 @@ h2 {
 
 .fos-presentation {
   position: relative;
-  overflow-y: hidden;
+  overflow: hidden;
   width: 100%;
   height: calc(100vh - 138px);
   display: flex;
@@ -499,7 +513,7 @@ h2 {
   background-size: cover;
   background-color: rgb(125, 92, 92);
   background-blend-mode: multiply;
-  border: 3px solid white;
+  border: 1px solid white;
   transform: translate3d(-100%, 0, 0);
 }
 
@@ -509,7 +523,7 @@ h2 {
   background-size: cover;
   background-color: rgb(125, 92, 92);
   background-blend-mode: multiply;
-  border: 3px solid white;
+  border: 1px solid white;
   border-top: 0;
   transform: translate3d(100%, 0, 0);
 }
@@ -520,7 +534,7 @@ h2 {
   background-size: cover;
   background-color: rgb(125, 92, 92);
   background-blend-mode: multiply;
-  border: 3px solid white;
+  border: 1px solid white;
   border-top: 0;
   transform: translate3d(-100%, 0, 0);
 }
@@ -562,10 +576,11 @@ h2 {
 }
 
 .info-link-container h2 {
+  padding: 10px;
   opacity: 0;
   font-family: var(--font-body);
   font-size: 2.5rem;
-  transition: all 0.3s ease;
+  transition: font-size 0.3s ease;
 }
 
 .info-img {
@@ -1278,26 +1293,35 @@ h2 {
   }
 }
 
+@keyframes shake {
+  0%,
+  50%,
+  100% {
+    transform: translate3d(-10%, 0, 0);
+  }
+
+  25%,
+  75% {
+    transform: translate3d(10%, 0, 0);
+  }
+}
+
 /* Media Queries */
 
 /* Medium devices */
 @media screen and (min-width: 481px) {
+  /* <Header /> */
+  .main-nav {
+    padding: 0 30px;
+  }
+
   /* <NavigationMenu /> */
   .nav-menu-wrapper {
     width: 300px;
   }
 
   .link {
-    font-size: 1.5rem;
-  }
-
-  /* <NavigationMenu /> */
-  .nav-menu-wrapper {
-    width: 500px;
-  }
-
-  .link {
-    font-size: 1.7rem;
+    font-size: 1.9rem;
   }
 
   /* <MainSection /> */
@@ -1306,7 +1330,7 @@ h2 {
   }
 
   .description p {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
   }
 
   /* <Portfolio /> */
@@ -1315,12 +1339,15 @@ h2 {
     background-blend-mode: soft-light;
   }
 
+  .info-link-container h2 {
+    font-size: 2.7rem;
+  }
+
   .info-link-container:hover h2 {
-    font-size: 4rem;
-    color: black;
+    font-size: 3rem;
+    color: var(--bg-color-one);
     background-color: white;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 10px 20px;
   }
 }
 
@@ -1337,11 +1364,11 @@ h2 {
 
   /* <NavigationMenu /> */
   .nav-menu-wrapper {
-    width: 500px;
+    width: 400px;
   }
 
   .link {
-    font-size: 1.7rem;
+    font-size: 2.2rem;
   }
 
   /* <MainSection /> */
@@ -1350,20 +1377,48 @@ h2 {
   }
 
   .description p {
-    font-size: 4rem;
+    font-size: 3.5rem;
+  }
+
+  .arrow-wrapper {
+    width: 15vw;
   }
 
   /* <Portfolio /> */
+  .portfolio {
+    flex-direction: row;
+  }
+
+  .info-link-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 33.33%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--bg-color-three);
+    transition: all 0.3s ease;
+  }
+
+  .info-link-container:nth-child(1),
+  .info-link-container:nth-child(2),
+  .info-link-container:nth-child(3) {
+    border: 1px solid white;
+  }
+
   .info-link-container:hover {
-    height: 50%;
+    width: 50%;
+    height: 100%;
     background-blend-mode: soft-light;
   }
 
+  .info-link-container h2 {
+    font-size: 2.9rem;
+  }
+
   .info-link-container:hover h2 {
-    font-size: 4rem;
-    color: black;
-    background-color: white;
-    padding: 10px;
-    border-radius: 10px;
+    font-size: 3.5rem;
   }
 }

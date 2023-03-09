@@ -25,10 +25,14 @@ const MainSection = () => {
           <Description visible={visible} />
           <Portfolio visible={visible} />
           <div
-            tabIndex="0"
+            tabIndex="1"
             role="button"
             aria-pressed="false"
-            onKeyDown={(e) => e.preventDefault}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                arrowHandle();
+              }
+            }}
             onClick={arrowHandle}
             className={
               showPortfolio ? "arrow-wrapper-expanded" : "arrow-wrapper"
