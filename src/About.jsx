@@ -5,8 +5,10 @@ import { IntroText, HobbiesText, WorkText } from "./AboutText";
 import Icons from "./Icons";
 import Footer from "./Footer";
 import Boxes from "./Boxes";
+import { useMediaQuery } from "usehooks-ts";
 
 const About = () => {
+  const deskTop = useMediaQuery("(min-width: 991px)");
   const { menuActive } = useContext(MenuActiveContext);
   const { ref: profileRef, inView: profileInView } = useInView({
     threshold: 0.3,
@@ -23,7 +25,17 @@ const About = () => {
       <div className="about-wrapper about-background">
         <div className="about-intro-container">
           <Boxes />
-          <IntroText />
+          {deskTop ? (
+            <div className="about-intro-text">
+              <IntroText />
+              <WorkText />
+            </div>
+          ) : (
+            <div>
+              <IntroText />
+            </div>
+          )}
+
           <div ref={profileRef} className="about-intro-img">
             <div
               className={
@@ -44,7 +56,7 @@ const About = () => {
             ></div>
             <img loading="lazy" src="/desk.webp" alt="office desk" />
           </div>
-          <WorkText />
+          {deskTop ? null : <WorkText />}
         </div>
         <div className="footer-wrapper">
           <Icons />

@@ -5,6 +5,7 @@ const Boxes = (props) => {
 
   useEffect(() => {
     boxAnimationHandle();
+
     return () => {};
   }, []);
 
@@ -28,41 +29,23 @@ const Boxes = (props) => {
     console.log("boxes are flying");
   }
 
+  let boxes = [];
+  for (let i = 0; i < 12; i++) {
+    boxes.push(i);
+  }
+
   return (
     <div
       ref={boxRef}
       className={props.inverted ? "box-wrapper-inverted" : "box-wrapper"}
     >
-      <div className="box-container">
-        <span className="box"></span>
-      </div>
-      <div className="box-container">
-        <span className="box"></span>
-      </div>
-      <div className="box-container">
-        <span className="box"></span>
-      </div>
-      <div className="box-container">
-        <span className="box"></span>
-      </div>
-      <div className="box-container">
-        <span className="box"></span>
-      </div>
-      <div className="box-container">
-        <span className="box"></span>
-      </div>
-      <div className="box-container">
-        <span className="box"></span>
-      </div>
-      <div className="box-container">
-        <span className="box"></span>
-      </div>
-      <div className="box-container">
-        <span className="box"></span>
-      </div>
-      <div className="box-container">
-        <span className="box"></span>
-      </div>
+      {boxes.map((box) => {
+        return (
+          <div key={box} className="box-container">
+            <span className="box"></span>
+          </div>
+        );
+      })}
     </div>
   );
 };

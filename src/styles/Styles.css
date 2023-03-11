@@ -89,7 +89,7 @@ h2 {
   right: 0;
   bottom: auto;
   width: 100%;
-  z-index: 99;
+  z-index: 990;
   background-color: var(--bg-color-one);
 }
 
@@ -640,6 +640,7 @@ h2 {
   gap: 30px;
   justify-content: center;
   align-items: center;
+  z-index: 99;
 }
 
 .box-wrapper-inverted {
@@ -684,8 +685,10 @@ h2 {
 }
 
 .about-intro-img {
+  text-align: center;
   position: relative;
-  width: 100%;
+  width: fit-content;
+  max-width: 400px;
   overflow: hidden;
 }
 
@@ -849,7 +852,7 @@ h2 {
 
 .contact-wrapper h1 {
   font-size: 2.5rem;
-  margin: 20px;
+  margin: 20px 0px;
   animation: headerLeft 2s ease forwards;
 }
 
@@ -904,22 +907,23 @@ h2 {
 
 .asteroid-container:first-child {
   opacity: 0;
+  top: -20px;
   position: absolute;
-  animation: asteroidImpact 5s ease infinite;
+  animation: asteroidImpact 3.2s ease infinite;
 }
 
 .asteroid-container:nth-child(2) {
   opacity: 0;
   position: absolute;
-  top: 50px;
-  animation: asteroidImpact 5s ease infinite 3s;
+  top: 80px;
+  animation: asteroidImpact 3.4s ease infinite 3s;
 }
 
 .asteroid-container:last-child {
   opacity: 0;
   position: absolute;
-  top: 80px;
-  animation: asteroidImpact 5s ease infinite 4.5s;
+  top: 130px;
+  animation: asteroidImpact 3.3s ease infinite 4.5s;
 }
 
 .asteroid {
@@ -928,7 +932,8 @@ h2 {
   border-radius: 100vw;
   width: 3px;
   background-color: white;
-  transform: rotate(65deg);
+  transform: rotate(66deg);
+  border-radius: 100% 0 0 100%;
 }
 
 .moon-container {
@@ -1102,9 +1107,14 @@ h2 {
     opacity: 0;
     transform: translate3d(0, 0, 0);
   }
+
+  25% {
+    opacity: 0.2;
+  }
+
   to {
-    opacity: 1;
-    transform: translate3d(-1700px, 700px, 0);
+    opacity: 0;
+    transform: translate3d(-1400px, 600px, 0);
   }
 }
 
@@ -1348,6 +1358,125 @@ h2 {
     color: var(--bg-color-one);
     background-color: white;
     padding: 10px 20px;
+    filter: blur(0px);
+  }
+
+  /* <About /> */
+  .about-intro-container,
+  .about-hobbies {
+    position: relative;
+    font-family: var(--font-body);
+    padding: 10vw 10vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-intro-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .about-intro-description {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-intro-description p {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+
+  .hobbies-header h2 {
+    font-size: 2rem;
+  }
+
+  .box-container {
+    opacity: 0;
+    width: calc(15px + 1vw);
+    height: calc(15px + 1vw);
+    background-color: gray;
+  }
+
+  .box-wrapper {
+    position: absolute;
+    top: 7%;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .box-wrapper-inverted {
+    position: absolute;
+    bottom: 5%;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about-wrapper .footer-wrapper {
+    margin-top: 70px;
+  }
+
+  /* <Contact /> */
+  .contact-wrapper h1 {
+    font-size: 2.8rem;
+    margin: 30px 20px;
+  }
+
+  .contact-wrapper p {
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 22px;
+    margin: 30px 20px;
+    font-size: 1.2rem;
+  }
+
+  /* Other Styles */
+  .asteroid-container:first-child {
+    animation: asteroidImpact 3.2s ease infinite;
+  }
+
+  .asteroid-container:nth-child(2) {
+    top: 60px;
+    animation: asteroidImpact 3.3s ease infinite 3s;
+  }
+
+  .asteroid-container:last-child {
+    top: 130px;
+    animation: asteroidImpact 3.4s ease infinite 4.5s;
+  }
+
+  .asteroid {
+    transform: rotate(65deg);
+  }
+
+  @keyframes asteroidImpact {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 0, 0);
+    }
+
+    25% {
+      opacity: 0.2;
+    }
+
+    40% {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 0;
+      transform: translate3d(-2200px, 900px, 0);
+    }
+  }
+
+  .btn {
+    padding: 25px;
+    margin: 15px;
   }
 }
 
@@ -1420,5 +1549,130 @@ h2 {
 
   .info-link-container:hover h2 {
     font-size: 3.5rem;
+  }
+
+  /* <About /> */
+  .about-intro-container,
+  .about-hobbies {
+    position: relative;
+    font-family: var(--font-body);
+    padding: 6vw 5vw;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .about-hobbies {
+    padding-top: 2vw;
+  }
+
+  .about-intro-header h2 {
+    font-size: 3rem;
+    font-family: var(--font-code);
+    animation: headerLeft 1.5s ease forwards;
+  }
+
+  .about-intro-text,
+  .hobbies-info {
+    max-width: 50%;
+    padding: 0px 20px;
+  }
+
+  .about-intro-text {
+    margin-right: 30px;
+  }
+
+  .about-intro-info p {
+    margin-bottom: 0;
+  }
+
+  .about-intro-description {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-intro-description p {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    max-width: 100%;
+  }
+
+  .about-intro-text,
+  .about-intro-img {
+    margin-top: 10px;
+  }
+
+  .hobbies-info {
+    order: 1;
+    margin-left: 30px;
+  }
+
+  .about-hobbies .about-intro-img {
+    max-width: 600px;
+  }
+
+  .about-wrapper .footer-wrapper {
+    margin-top: 100px;
+  }
+
+  /* <Contact /> */
+  .contact-wrapper h1 {
+    font-size: 3rem;
+    margin: 30px 20px;
+  }
+
+  .contact-wrapper p {
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: 22px;
+    margin: 30px 20px;
+    font-size: 1.3rem;
+  }
+
+  /* Other Styles */
+  .asteroid-container:first-child {
+    top: -100px;
+    animation: asteroidImpact 3.7s ease infinite;
+  }
+
+  .asteroid-container:nth-child(2) {
+    top: 20px;
+    animation: asteroidImpact 3.8s ease infinite 3s;
+  }
+
+  .asteroid-container:last-child {
+    top: 60px;
+    animation: asteroidImpact 3.9s ease infinite 4.5s;
+  }
+
+  .asteroid {
+    transform: rotate(72deg);
+  }
+
+  @keyframes asteroidImpact {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 0, 0);
+    }
+
+    25% {
+      opacity: 0.2;
+    }
+
+    40% {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 0;
+      transform: translate3d(-3300px, 900px, 0);
+    }
+  }
+
+  .btn {
+    padding: 25px;
+    margin: 15px;
   }
 }

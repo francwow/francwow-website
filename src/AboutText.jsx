@@ -15,8 +15,6 @@ export const IntroText = () => {
             My name is Francisco Osorio Silva. Im an adventure seeker, animal
             lover, running enthusiast and avid gamer, who enjoys learning and
             overcoming challenges.
-            <br></br>
-            <br></br>
           </p>
         </div>
       </div>
@@ -31,8 +29,6 @@ export const IntroText = () => {
             de los animales, que se divierte corriendo y jugando videojuegos.
             Disfruto mucho aprendiendo nuevas habilidades y superando
             obstáculos.
-            <br></br>
-            <br></br>
           </p>
         </div>
       </div>
