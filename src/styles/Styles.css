@@ -19,6 +19,7 @@ body {
   --bg-color-two: rgb(163, 26, 203);
   --bg-color-three: deeppink;
   --bg-color-one-darker: rgb(40, 195, 212);
+  --bg-color-cover: rgb(5, 5, 13, 0.9);
 }
 
 html::-webkit-scrollbar {
@@ -768,7 +769,7 @@ h2 {
   width: 100vw;
   height: 14vh;
   background-color: white;
-  padding: 10px;
+  padding: 10px 10px 0px 10px;
   margin: 0;
   transition: all 0.2s ease-in-out;
   overflow: hidden;
@@ -1316,6 +1317,17 @@ h2 {
   }
 }
 
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 /* Media Queries */
 
 /* Medium devices */
@@ -1357,8 +1369,9 @@ h2 {
     font-size: 3rem;
     color: var(--bg-color-one);
     background-color: white;
+    width: 100%;
+    text-align: center;
     padding: 10px 20px;
-    filter: blur(0px);
   }
 
   /* <About /> */
@@ -1615,6 +1628,63 @@ h2 {
 
   .about-wrapper .footer-wrapper {
     margin-top: 100px;
+  }
+
+  /* <Work /> */
+  .work-wrapper {
+    height: calc(100vh - 69px);
+  }
+
+  .work-container {
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    width: 70%;
+  }
+
+  .work-container a {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .work-item-info {
+    padding: 0;
+  }
+
+  .item-info-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    padding: 10px;
+    opacity: 0;
+  }
+
+  .work-item {
+    width: 10vw;
+    height: 90%;
+    margin: 5px;
+    padding: 0;
+  }
+
+  .work-item:hover,
+  .work-item:active {
+    width: 30vw;
+  }
+
+  .work-item:hover .work-item-info {
+    --bg-color-cover: rgb(205, 205, 213, 0.1);
+  }
+
+  .work-item:hover .item-info-container {
+    animation: slideUp 1s ease forwards;
+  }
+
+  .hover-false {
+    padding: 5px 0;
   }
 
   /* <Contact /> */

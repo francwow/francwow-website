@@ -7,12 +7,12 @@ import WorkDeskTop from "./WorkDeskTop";
 const Work = () => {
   const contRef = useRef(null);
   const { menuActive } = useContext(MenuActiveContext);
-  const mobile = useMediaQuery("(max-width: 480px)");
+  const mobile = useMediaQuery("(max-width: 991px)");
 
   return (
     <div className={`main-section  ${menuActive ? "move-left" : ""}`}>
       <div ref={contRef} className="work-wrapper work-background">
-        {mobile ? <WorkMobile /> : <WorkMobile />}
+        {mobile ? <WorkMobile /> : <WorkDeskTop />}
       </div>
     </div>
   );
