@@ -49,7 +49,7 @@ export const HobbiesText = () => {
             I love go for a run early in the morning after my first coffee. I
             also like to read about science, psychology and human interactions.
             People are very important to me, I visit friends and family whenever
-            I get a chance.
+            I can.
           </p>
         </div>
       </div>

@@ -1,5 +1,9 @@
-//
 10/03/2023
 - Quedó hecho casi todo, solo falta arreglar <Work /> para desktop.
   También me gustaría animar el texto de <Contact /> y darles a algunos headings de la página
   un efecto ¨sombra¨ o algo que los ayude a resaltar y contrastar mejor.
+
+14/03/2023
+- importar svg como componentes.
+
+  // import {ReactComponent as GithubIcon} from "/public/github.svg";
