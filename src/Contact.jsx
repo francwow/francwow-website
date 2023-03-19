@@ -34,9 +34,7 @@ const Contact = () => {
           </div>
         ) : (
           <div className="contact-container">
-            <h1 style={{ fontSize: "2.2rem" }}>
-              ¡Me encantaría trabajar contigo!
-            </h1>
+            <h1>¡Me encantaría trabajar contigo!</h1>
             <p>
               Estoy ansioso por continuar creciendo como desarrollador
               front-end. Envíame un mensaje en cualquier momento.

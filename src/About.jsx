@@ -44,6 +44,7 @@ const About = () => {
             ></div>
             <img src="/profilepic.webp" alt="Francisco smiling" />
           </div>
+          {deskTop ? null : <WorkText />}
         </div>
         <div className="about-hobbies">
           <Boxes inverted={true} />
@@ -56,7 +57,6 @@ const About = () => {
             ></div>
             <img loading="lazy" src="/desk.webp" alt="office desk" />
           </div>
-          {deskTop ? null : <WorkText />}
         </div>
         <div className="footer-wrapper">
           <Icons />

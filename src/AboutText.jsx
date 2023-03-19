@@ -78,12 +78,20 @@ export const WorkText = () => {
     return englishActive ? (
       <div className="about-intro-description">
         <p>
-          I&apos;ve been learning front-end development for the last 12 months.
+          I&apos;ve been learning front-end development for the last 12 months,
           I love everything about this craft, from designing the layout of a
           website and picking the right color composition, to writing DRY
-          Javascript and meaningful CSS classes. I can&apos;t get enough of it.
-          It&apos;s been a fantastic journey so far.
-          <br></br>
+          Javascript and meaningful CSS classes. My background in advertising
+          and marketing has helped me designing and writing code. Currently my
+          front-end stack includes{" "}
+          <span className="yellow-text">
+            HTML, CSS, JavaScript, Figma, Visual Studio Code and React
+          </span>
+          . Im also learning new technologies and tools like{" "}
+          <span className="yellow-text">
+            React Native, Next.js, Node.js, TypeScript, ChatGPT(OpenAI), SCSS
+          </span>
+          .<br></br>
           <br></br>
           I&apos;ve had the opportunity of working on freelance projects for
           real clients, and playing with fun personal ideas. You can find all my
@@ -94,11 +102,20 @@ export const WorkText = () => {
       <div className="about-intro-description">
         <p>
           He estado aprendiendo desarrollo front-end los últimos 12 meses. Me
-          encanta todo acerca de este oficio. Desde el diseño del layout y la
+          encanta todo acerca de este oficio, desde el diseño del layout y la
           elección de los colores adecuados, hasta escribir DRY Javascript y
-          clases significativas en CSS, disfruto mucho todo el proceso. Ha sido
-          un viaje fantástico.
-          <br></br>
+          clases significativas en CSS, disfruto mucho todo el proceso. Tengo un
+          background en publicidad y marketing que me ha servido mucho a la hora
+          de diseñar y escribir código. Actualmente mi stack de desarrollo
+          front-end incluye{" "}
+          <span className="yellow-text">
+            HTML, CSS, JavaScript, Figma, Visual Studio Code y React
+          </span>
+          . También continúo aprediendo nuevas herramientas y tecnologías como{" "}
+          <span className="yellow-text">
+            React Native, Next.js, Node.js, TypeScript, ChatGPT(OpenAI), SCSS
+          </span>
+          .<br></br>
           <br></br>
           Este año he tenido la oportunidad de trabajar en proyectos freelance
           para clientes reales y desarrollar ideas divertidas. Puedes encontrar

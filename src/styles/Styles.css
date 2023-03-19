@@ -637,7 +637,7 @@ h2 {
 
 .box-wrapper {
   position: absolute;
-  top: 5%;
+  top: 3%;
   display: flex;
   gap: 30px;
   justify-content: center;
@@ -713,6 +713,10 @@ h2 {
   width: 0px;
   transform-origin: right;
   animation: hideOverlay 0.8s ease-in forwards;
+}
+
+.yellow-text {
+  color: yellow;
 }
 
 /* <Work /> */
@@ -1438,7 +1442,7 @@ h2 {
 
   .box-wrapper {
     position: absolute;
-    top: 7%;
+    top: 5%;
     display: flex;
     gap: 30px;
     justify-content: center;
