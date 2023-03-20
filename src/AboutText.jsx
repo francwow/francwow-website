@@ -12,9 +12,10 @@ export const IntroText = () => {
         </div>
         <div className="about-intro-description">
           <p>
-            My name is Francisco Osorio Silva. Im an adventure seeker, animal
-            lover, running enthusiast and avid gamer, who enjoys learning and
-            overcoming challenges.
+            My name is Francisco Osorio Silva, here in Colombia they call me
+            &quot;Pacho&quot;. Im an adventure seeker, animal lover, running
+            enthusiast and avid gamer, who enjoys learning and overcoming
+            challenges.
           </p>
         </div>
       </div>
@@ -25,10 +26,10 @@ export const IntroText = () => {
         </div>
         <div className="about-intro-description">
           <p>
-            Me llamo Francisco Osorio Silva. Soy una persona aventurera, amante
-            de los animales, que se divierte corriendo y jugando videojuegos.
-            Disfruto mucho aprendiendo nuevas habilidades y superando
-            obstáculos.
+            Me llamo Francisco Osorio Silva, también me dicen &quot;Pacho&quot;.
+            Soy una persona aventurera, amante de los animales, que se divierte
+            corriendo y jugando videojuegos. Disfruto mucho aprendiendo nuevas
+            habilidades y superando obstáculos.
           </p>
         </div>
       </div>
@@ -42,14 +43,21 @@ export const HobbiesText = () => {
     return englishActive ? (
       <div className="hobbies-info">
         <div className="hobbies-header">
-          <h2>A lovely day in Francisco&apos;s life</h2>
+          <h2>When I&apos;m not coding</h2>
         </div>
         <div className="about-intro-description">
           <p>
-            I love go for a run early in the morning after my first coffee. I
-            also like to read about science, psychology and human interactions.
-            People are very important to me, I visit friends and family whenever
-            I can.
+            I love go for a run early in the morning after my first coffee.
+            Exercise keeps me focused and helps me develop interesting ideas. I
+            read about science, psychology, human interactions, fantasy and a
+            litle bit of poetry whenever I&apos;m feeling nostalgic. People are
+            very important to me, I visit friends and family whenever I can. I
+            also love going to music festivals and places where I know I&apos;ll
+            meet interesting individuals. I&apos;v been a gamer all my life,
+            played mario, zelda and pokemon when I was a teenager, later found
+            myself enjoying action-rpgs and mmorpgs like World of Warcraft,
+            Witcher 3, Cyberpunk, Elden Ring and many others. I hope we can work
+            together soon.
           </p>
         </div>
       </div>
@@ -61,9 +69,17 @@ export const HobbiesText = () => {
         <div className="about-intro-description">
           <p>
             Amo trotar largas distancias en la mañana justo despues de mi primer
-            café. Me encanta leer acerca de ciencia, psicología e interacciones
-            humanas. Las personas son muy importantes para mi, me gusta visitar
-            a mis amigos y familiares cada vez que tengo la posibilidad.
+            café. La actividad física me mantiene enfocado y me ayuda a
+            desarrollar ideas interesantes. Me encanta leer acerca de ciencia,
+            psicología, interacciones humanas, fantasía y un poco de poesía
+            cuando me siento nostálgico. Las personas son muy importantes para
+            mi, me gusta visitar a mis amigos y familiares cada vez que tengo la
+            posibilidad. También amo asistir a festivales de música y lugares
+            donde pueda encontrar personajes interesantes. He sido un gamer toda
+            mi vida, jugué mario, zelda y pokemón en mi adolescencia, más tarde
+            gravité hacia los action-rpgs y mmorpgs como World of Warcraft,
+            Witcher 3, Cyberpunk, Elden Ring y muchos más. Espero tener la
+            posibilidad de trabajar contigo pronto.
           </p>
         </div>
       </div>
@@ -82,12 +98,12 @@ export const WorkText = () => {
           I love everything about this craft, from designing the layout of a
           website and picking the right color composition, to writing DRY
           Javascript and meaningful CSS classes. My background in advertising
-          and marketing has helped me designing and writing code. Currently my
-          front-end stack includes{" "}
+          and marketing has helped in my journey as a web developer. Currently
+          my front-end stack includes{" "}
           <span className="yellow-text">
             HTML, CSS, JavaScript, Figma, Visual Studio Code and React
           </span>
-          . Im also learning new technologies and tools like{" "}
+          . Im also learning to work with{" "}
           <span className="yellow-text">
             React Native, Next.js, Node.js, TypeScript, ChatGPT(OpenAI), SCSS
           </span>

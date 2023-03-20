@@ -42,7 +42,7 @@ const About = () => {
                 profileInView ? "desc-overlay hide-overlay" : "desc-overlay"
               }
             ></div>
-            <img src="/profilepic.webp" alt="Francisco smiling" />
+            <img src="/work.webp" alt="Francisco smiling" />
           </div>
           {deskTop ? null : <WorkText />}
         </div>
@@ -55,7 +55,7 @@ const About = () => {
                 deskInView ? "desc-overlay hide-overlay" : "desc-overlay"
               }
             ></div>
-            <img loading="lazy" src="/desk.webp" alt="office desk" />
+            <img loading="lazy" src="/aboutpic.webp" alt="office desk" />
           </div>
         </div>
         <div className="footer-wrapper">
