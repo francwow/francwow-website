@@ -7,7 +7,7 @@ const Footer = (props) => {
         }
         className="footer"
       >
-        Copyright © 2023 fos.com
+        Copyright © 2023 francwow.com
       </small>
     </div>
   );

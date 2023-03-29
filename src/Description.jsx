@@ -2,16 +2,13 @@ import { useRef, useEffect, useState, useContext } from "react";
 import LanguageContext from "./contexts/languageContext";
 
 const Description = (props) => {
-  // requestAnimationFrame
-  const [stickVisible, setStickVisible] = useState(false);
+  const [stickVisible] = useState(false);
   let stickLoopInterval = null;
   const stickRef = useRef(null);
   const { englishActive } = useContext(LanguageContext);
 
   useEffect(() => {
     loop();
-    // requestAnimationFrame
-    // loopAnimation();
     return () => {
       clearInterval(stickLoopInterval);
     };
@@ -23,24 +20,6 @@ const Description = (props) => {
       console.log(stickVisible);
     }, 500);
   };
-
-  // requestAnimationFrame
-  // let requestAnimationFrame = window.requestAnimationFrame;
-
-  // let last = 0;
-  // let speed = 0.5;
-
-  // function loopAnimation(timeStamp) {
-  //   let timeInSecond = timeStamp / 1000;
-
-  //   if (timeInSecond - last >= speed) {
-  //     last = timeInSecond;
-  //     setStickVisible((prevState) => !prevState);
-  //     console.log(stickVisible);
-  //   }
-
-  //   requestAnimationFrame(loopAnimation);
-  // }
 
   return (
     <div

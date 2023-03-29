@@ -11,7 +11,7 @@ const Header = () => {
       <div className="main-nav">
         <Link to="/" onClick={() => setMenuActive(false)}>
           <div className="logo">
-            <span>{`FOS={webDeveloper}`}</span>
+            <span>{`francwow={webDeveloper}`}</span>
           </div>
         </Link>
 

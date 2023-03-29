@@ -25,8 +25,6 @@ const Boxes = (props) => {
         }s ease infinite ${randomNumber * 4.5}s`;
       });
     }
-
-    console.log("boxes are flying");
   }
 
   let boxes = [];
