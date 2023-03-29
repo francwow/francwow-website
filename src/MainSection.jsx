@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import MenuActiveContext from "./contexts/menuActiveContext";
-import LanguageContext from "./contexts/languageContext";
 import Description from "./Description";
 import Portfolio from "./Portfolio";
 
@@ -25,7 +24,7 @@ const MainSection = () => {
           <Description visible={visible} />
           <Portfolio visible={visible} />
           <div
-            tabIndex="1"
+            tabIndex="0"
             role="button"
             aria-pressed="false"
             onKeyDown={(e) => {
