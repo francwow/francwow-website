@@ -17,7 +17,6 @@ const Description = (props) => {
   const loop = () => {
     stickLoopInterval = setInterval(() => {
       stickRef.current.classList.toggle("visible");
-      console.log(stickVisible);
     }, 500);
   };
 
