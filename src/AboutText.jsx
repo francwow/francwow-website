@@ -56,8 +56,8 @@ export const HobbiesText = () => {
             meet interesting individuals. I&apos;v been a gamer all my life,
             played mario, zelda and pokemon when I was a teenager, later found
             myself enjoying action-rpgs and mmorpgs like World of Warcraft,
-            Witcher 3, Cyberpunk, Elden Ring and many others. I hope we can work
-            together soon.
+            Witcher 3, Cyberpunk, Elden Ring, Hades and many others. I hope we
+            can work together soon.
           </p>
         </div>
       </div>
@@ -78,8 +78,8 @@ export const HobbiesText = () => {
             donde pueda encontrar personajes interesantes. He sido un gamer toda
             mi vida, jugué mario, zelda y pokemón en mi adolescencia, más tarde
             gravité hacia los action-rpgs y mmorpgs como World of Warcraft,
-            Witcher 3, Cyberpunk, Elden Ring y muchos más. Espero tener la
-            posibilidad de trabajar contigo pronto.
+            Witcher 3, Cyberpunk, Elden Ring, Hades y muchos más. Espero tener
+            la posibilidad de trabajar contigo pronto.
           </p>
         </div>
       </div>
